@@ -2,7 +2,7 @@ title: una página en blanco
 email: eguevaralopez@gmail.com
 description: un blog no-lineal, de un mae no-lineal
 url: "http://eguevaralopez.github.io"
-show_excerpts: false # set to true to show excerpts on the homepage
+show_excerpts: true # set to true to show excerpts on the homepage
 
 # Minima date format
 minima:
