@@ -1,0 +1,46 @@
+{% comment %}
+  Placeholder to allow defining custom head
+  
+https://stackoverflow.com/questions/6476351/how-to-use-the-computer-modern-font-in-webpages
+https://longqian.me/2017/02/09/github-jekyll-tag/
+{% endcomment %}
+
+
+<!--KaTeX-->
+{% if page.katex %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false},
+                    {left: "\\(", right: "\\)", display: false},
+                    {left: "\\[", right: "\\]", display: true} // Este es el que suele salvar la tanda
+                ],
+                throwOnError : false
+            });
+        });
+
+        // Este loop busca etiquetas que Jekyll a veces crea y las convierte a KaTeX
+        document.querySelectorAll('script[type="math/tex"]').forEach(function(el) {
+            let tex = el.innerText;
+            let span = document.createElement('span');
+            katex.render(tex, span, { displayMode: false });
+            el.parentNode.replaceChild(span, el);
+        });
+
+        document.querySelectorAll('script[type="math/tex; mode=display"]').forEach(function(el) {
+            let tex = el.innerText;
+            let div = document.createElement('div');
+            katex.render(tex, div, { displayMode: true });
+            el.parentNode.replaceChild(div, el);
+        });
+    </script>
+{% endif %}
+
+{% if site.tags != "" %}
+  {% include collecttags.html %}
+{% endif %}
