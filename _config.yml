@@ -6,7 +6,7 @@ show_excerpts: false # set to true to show excerpts on the homepage
 
 # Minima date format
 minima:
-  date_format: "%Y-%B-%-d"
+  date_format: "%Y-%m-%d"
 
   # generate social links in footer
   social_links:
