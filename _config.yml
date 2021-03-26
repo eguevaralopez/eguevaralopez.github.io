@@ -6,12 +6,12 @@ show_excerpts: false # set to true to show excerpts on the homepage
 
 # Minima date format
 minima:
-  date_format: "%Y-%b-%-d"
+  date_format: "%Y-%B-%-d"
 
   # generate social links in footer
   social_links:
-    twitter: jekyllrb
-    github:  jekyll
+    # twitter: jekyllrb
+    # github:  jekyll
     # devto: jekyll
     # dribbble: jekyll
     # facebook: jekyll
