@@ -8,4 +8,6 @@ tags: [mathjax, latex]
 
 Esta es una prueba de $$\LaTeX$$.
 
-$$e^{i\pi}=-1$$
+$$
+\int_{-\inf}^{inf}\cdots\int_{-\inf}^{inf}\mathrm{exp}\left(\frac{i2\pi}{h}\int_a^bL\,dt\right)\,dx_0\cdots dx_n
+$$
