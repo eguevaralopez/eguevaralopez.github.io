@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "from the web, vol.2 — *QFT* edition"
+title:  "from the web, vol.2—QFT edition"
 date:   2016-04-25 06:41:00 +0200
 categories: post
 tags: [math, physics, rug, msc]
