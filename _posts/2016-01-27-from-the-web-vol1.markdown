@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "from the web, vol.1"
-date:   2016-02-16 07:43:00 +0100
+date:   2016-02-27 14:43:00 +0100
 categories: post
 tags: [math, physics, rug, msc]
 ---
