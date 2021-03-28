@@ -6,7 +6,7 @@ categories: post
 tags: [math, physics, rug, msc]
 ---
 
-Because a grad student's money is better spent on food and drink, here is a compendium of useful and free books/notes/videos I've gone through (or plan to go through, in some cases) as I work towards a degree in Physics;
+Because a grad student's money is better spent on food and drink, here is a compendium of useful and free books/notes/videos I've gone through (or plan to go through, in some cases) as I work towards a M.Sc. in Physics;
 
 - ***The Feynman Lectures on Physics***. Need I say more? Available [from Caltech](http://feynmanlectures.caltech.edu/). There are no words to describe just how *good* these lectures are, and its a very big deal that they are available online to everyone. My thesis advisor recommended to buy this set, along with Dirac's ***Principles*** and von Neumann's ***Mathematical Foundations of QM*** with my first Ph.D. salary (if I decide to go for one, that is). 
 
