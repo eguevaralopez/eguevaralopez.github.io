@@ -22,5 +22,6 @@ The next two recommendations I'm particularly excited about! Not only are they a
 
 I'm always on the lookout for quality stuff, so there will probably be other posts like this one in the future.
 
+---
 
 [^1]: Preferably 3rd edition, because its the one [Wolfram MathWorld](https://mathworld.wolfram.com/) uses as reference.
