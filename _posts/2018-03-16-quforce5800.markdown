@@ -1,0 +1,312 @@
+---
+layout:      post
+title:       "the story of the QuForce FX 5800 Ultra..."
+date:       2018-03-16 16:12:00 +0200
+categories:  post
+tags: [hardware, retro, mod, nvidia, quadro]
+---
+<style>body {text-align: justify}</style>
+### …or, how to turn your cheap Quadro FX 1000 into a GeForce FX 5800 Ultra.[^1]
+
+## <u>intro</u>
+About a week ago, while rummaging through *Marktplaats*, I spotted a Quadro FX 1000 that had been mislabeled as Geforce 5200. I've always kept my eyes open for this model or the Quadro FX 2000, mainly because they are based on the *NV30* chip, the same one powering the infamous *dustbuster*: the *GeForce 5800 Ultra*. I went ahead and bought it for €7 + shipping---good deal. Upon arrival I inspected it and noticed the memory chips used in this card are actually the *same ones* used in the GeForce FX 5800 Ultra.[^2]
+
+{:refdef: style="text-align: center;"}
+![Memory chips, marked K4N26323AE-GC1K](/assets/img/2018-03-16-quforce5800_1.jpg){:width="70%"}
+{: refdef}
+
+{:refdef: style="text-align: center;"}
+![](/assets/img/2018-03-16-quforce5800_2.gif){:width="70%"}
+{: refdef}
+
+So, while heavily underclocked at 300 MHz Core / 300 MHz Mem, the card will *for sure* reach a memory frequency of 500 MHz... if I can overclock the core to 500 MHz I'll have something special in my hands! I started fiddling around, overclocking only the core, and when I pumped 1.5 V into it it would reach 500 MHz easily, if a bit hot. And thus, the idea sprouted: lets mod the BIOS and turn this into a GeForce FX 5800 Ultra.
+
+Why do this?
+
+- Because its neigh impossible to find a *real* GeForce FX 5800 Ultra.
+- Because when you find a *real* 5800 Ultra, you have to choose between buying it and paying rent.
+- Because you enjoy tinkering with hardware.
+- Because you want a quieter alternative to the dustbuster.
+- Because you can!
+
+---
+## <u>the proceedings</u>
+
+I knew from the get-go I didn't want to do any *extensive* hardware mods to the card. I'm not averse to soldering and indeed enjoy modding my hardware, but I wanted something that could be easily reversible without whipping out a soldering iron. This meant tinkering with the BIOS. I had never done it extensively, so I was also eager to dive-in and learn a bit about it.
+
+Online you will find a lot of references about how to proceed, most if not all of them deal with turning a Geforce into a Quadro. Indeed, I remember the first resistor mods appearing online for the [GeForce and GeForce2 back in the day](https://www.oocities.org/tnaw_xtennis/ "All hail tnaw_xtennis!"). And it makes lots of sense, if you are using hardware for work but are on a budget, get the cheap Geforce and turn it into the expensive Quadro!
+
+The reason for my write-up here is twofold: by now the process of turning a Geforce into a Quadro is fairly well understood, I want to document the reverse process of going from a Quadro to a Geforce. I also want to encourage people in the retro community to rescue cheap, old Quadros and use them for retro-gaming. So, let's get our hands dirty! I referenced the [*nouveau project*](https://nouveau.freedesktop.org/wiki/NvHardwareDocs/), specifically [this section](http://envytools.readthedocs.io/en/latest/hw/io/pstraps.html) from the documentation for *envytools*. Throughout the process I used *nvflash 5.117.0.1*, *nvflash for windows 5.118*, and *NiBiTor 6.06*.
+
+#### 0. a bit of theory first
+
+The OS decides the identity of a card by looking at the card's BIOS and reading the **DeviceID**, so to have a Quadro FX 1000 recognized as a Geforce FX 5800 Ultra we must change its DeviceID. Before reaching the OS though, the card's BIOS itself validates the DeviceID on bootup, based on the configuration of the **straps**. Attempting to modify the DeviceID with a program like NiBiTor will *not* change the value of the straps, and will result in an identity crisis for the card: while the DeviceID says its a GeForce, the straps are telling it its a Quadro. The card will not initialize properly on bootup and we'll get no video. To successfully change the card's identity we need to modify the DeviceID *and* the straps.
+
+On NV3x (the *FX* series) based cards there are 2 sets of straps, **Strap0** and **Strap1**; each with 3 levels, **Primary**, **Select**, and **Secondary**. The *Primary* level consists of the resistors found physically in the card, they usually match the DeviceID. The *Select* level is a software strap, embedded in the BIOS. Values specified here perform a bitwise `AND` with the values from the *Primary* strap. Lastly, the *Secondary* level is also a software strap, its values perform a bitwise `OR` with those resulting from the previous `AND` operation.
+
+So, the gist of it is the straps must match the DeviceID. If we modify one, we must modify the other. Straps can be changed either in hardware, by moving resistors around---Primary strap---; or in software, by adjusting the *Select* or *Secondary* levels in the BIOS. The approaches are IDENTICAL in result. In my opinion, modifying the software straps has 1 advantage: it can be reversed immediately without having to move resistors back to their original position[^4].
+
+As a summary, the process to change the DeviceID is;
+
+- Back up the card's original BIOS---important!
+- Modify the card's original BIOS with a hex editor or NiBiTor, changing the DeviceID. This change will not affect the strap values embedded in the BIOS. If you stop here, you will get no video upon reboot.
+- Calculate software straps that match the new DeviceID and flash them into the BIOS. This is the main concern of the next subsections.
+
+Once these steps are done, the BIOS in the card will be *strapped*---backing this up is recommended! Flashing the original BIOS or the strapped BIOS into the card can be done at any time, the card will work immediately, the only difference being the DeviceID.
+
+#### 1. compare DeviceID
+
+The DeviceIDs of the cards can be read directly from the nvidia drivers: just open up the `nv4_disp.inf` file and search for them, you'll find their corresponding ID in hexadecimal. In our case, going from a Quadro FX 1000 to a 5800 Ultra, we need the following values (I have translated them into binary and noted which is which);
+
+    0309 = 00 00 00 11 00 00 10 01 (Quadro FX 1000)
+    0301 = 00 00 00 11 00 00 00 01 (GF FX 5800U)
+    DeviceID bit:            32 10
+
+Notice that the only difference is in the final 4 bits, in particular, the difference is in `DeviceID[3]` which we need to turn into a 0.
+
+#### 2. read straps from the ROM
+
+According to the documentation, the software straps Strap0-Select (S0-AND from now on, because it performs an `AND`) is found in location `0x58` of the BIOS image, Strap0-Secondary (referred to as S0-OR, because it performs an `OR`) is at `0x5c`, Strap1-Select (S1-AND) can be found in `0x60`, and Strap1-Secondary (S1-OR) at `0x64`. We can read them with any hex editor, I read them directly with nvflash using the command `nvflash --display 112`, the last 2 lines displayed are the relevant ones;
+
+    ...
+    0050:  E9 8F 7A 00 DE 10 82 01 FF FF FF 7F 00 00 00 00
+    0060:  FF FF FF 7F 00 00 00 80 22 00 A5 C1 E9 B4 16 E9
+
+And of those lines, only a few bytes are of our interest. In the 2nd half of line `0050`, the first 4 bytes represent S0-AND, the following represent S0-OR. In line `0060` the first 4 bytes represent S1-AND, the following 4 bytes are S1-OR. The order is little-endian, we reorder them in the following table;
+
+    S0-AND:  7F FF FF FF
+    S0-OR:   00 00 00 00
+    S1-AND:  7F FF FF FF
+    S1-OR:   80 00 00 00
+
+The NV30 chip has a total of 4 bits to set DeviceId, all of which are located in Strap0: `Strap0[12,13]` correspond to `DeviceID[0,1]`, and `Strap0[20,21]` correspond to `DeviceID[2,3]`. This means we only need to work with Strap0. In the following table we translate the straps from hex to binary, and point out the position of the DeviceID bits we need to change;
+
+    DeviceID bits:  xxxx xxxx   xx32 xxxx   xx10 xxxx   xxxx xxxx
+    S0-AND (hex) :  7F          FF          FF          FF
+    S0-AND (bin) :  0111 1111   1111 1111   1111 1111   1111 1111
+    S0-OR (hex)  :  00          00          00          00
+    S0-OR (bin)  :  0000 0000   0000 0000   0000 0000   0000 0000
+
+How to read this table? The top line has the DeviceID bits in their respective positions in Strap0: `DeviceID[0,1]` in positions `Strap0[12,13]`, for example. Below each hexadecimal value I have translated into binary: 7F corresponds to 0111 1111, for example.
+
+#### 3. Calculate the new straps
+
+If we look only at the DeviceID bits in the above table, we notice that the values in the S0-AND are all 1, and the values in the S0-OR are all 0. This means they are just a passthru for the Primary strap (the resistors in the card).
+
+We show this by example: the Quadro FX 1000 has a DeviceID of `1001`, as read from the `nv4_disp.inf` file. Lets suppose the Primary strap has those values, `1001`, and see what happens when we pass it through the Select and Secondary straps;
+
+    HW Strap  : 1001   (DeviceID set by resistors)
+    S0-AND    : 1111   (AND)
+    Result    : 1001   (result of bitwise AND)
+    S0-OR     : 0000   (OR)
+    Result    : 1001   (result of bitwise OR, and effective DeviceID)
+
+To have the card recognized as a 5800 Ultra we need the final result to be `0001`. We have 2 possibilities to achieve this:
+
+- Set all bits in the S0-AND to 0, resulting in `0000` after performing the `AND`, and then use S0-OR to set `0001`;
+- Set only bit `S0-AND[21]` to 0, resulting in `0001` after performing the `AND`, and leave S0-OR untouched.
+
+I chose the 2nd approach, which would look like this when we look at the complete Strap0;
+
+    DeviceID bits    :  xxxx xxxx   xx32 xxxx   xx10 xxxx   xxxx xxxx
+    Old S0-AND (hex) :  7F          FF          FF          FF
+    Old S0-AND (bin) :  0111 1111   1111 1111   1111 1111   1111 1111
+    New S0-AND (bin) :  0111 1111   1101 1111   1111 1111   1111 1111
+    New S0-AND (hex) :  7F          DF          FF          FF
+        S0-OR (hex)  :  00          00          00          00
+
+Since we only needed to change S0-AND, only those values are translated from hex to binary. Notice there is only 1 bit that had to be changed going from the *old* S0-And to the *new* S0-AND, the S0-OR strap remains untouched.
+
+Our set of 4 straps representing S0-AND, S0-OR, S1-AND, and S0-OR are respectively `0x7FDFFFFF`, `0x00000000`, `0x7FFFFFFF`, and `0x80000000`. We only changed S0-AND, the other straps are exactly the same as we originally read them.
+
+Hard part's over.
+
+#### 4. flashing
+
+Hard part's over, but now begins the dangerous part. If you intend to follow this *guide* then, before flashing anything...
+
+**MAKE A BACKUP OF YOUR BIOS!**
+
+**MAKE A RECOVERY FLOPPY / CD / USB THAT RUNS `nvflash` AUTOMATICALLY AND FLASHES THE BIOS BACK!**
+
+This part is done in NiBiTor. I opened up my backup of the BIOS and looked around, decided to change the following parts;
+
+- I added a second performance level, to differentiate 2D from 3D. Set the 3D at 500 / 500
+- Changed the Device ID and Sub System ID to a GeForce FX 5800 Ultra (changing the Sub System ID is not necessary, I did it to match a 5800U bios I found online)
+- In the Voltage table editor there were, curiously, 2 active entries. I say curiously because the BIOS was configured for 3D only, so I have no clue when it would use the 1st voltage entry. I just changed the VID of the 2nd entry to 7 instead of 5, this will give the card 1.5 V instead of 1.3 V when it goes into 3D mode.
+- Changed the bootup message to display QuForce FX 5800 Ultra 🤣
+
+{:refdef: style="text-align: center;"}
+![](/assets/img/2018-03-16-quforce5800_7.jpg){:width="70%"}
+{: refdef}
+
+{:refdef: style="text-align: center;"}
+![](/assets/img/2018-03-16-quforce5800_8.jpg){:width="70%"}
+{: refdef}
+
+With all those changes made, I saved the ROM as `NV30_qf5800u.rom` and flashed it. Since I have no other nvidia card in my system I didn't bother setting the index parameter,
+
+`nvflash -j -5 -6 NV30_qf5800u.rom`
+
+After this step, if you check the strap values, they are unchanged from the original BIOS. Run again `nvflash --display 112` and see the strap lines
+
+    ...
+    0050:  E9 8F 7A 00 DE 10 82 01 FF FF FF 7F 00 00 00 00
+    0060:  FF FF FF 7F 00 00 00 80 22 00 A5 C1 E9 B4 16 E9
+
+Before rebooting, I flashed the new software straps calculated in this post,
+
+    nvflash --straps 0x7FDFFFFF 0x00000000 0x7FFFFFFF 0x00000000
+
+The last one, S1-OR, should be `0x80000000`, but apparently the leftmost bit cannot be touched, so nvflash does it by itself: if you just put `0x00000000` you will get `0x80000000`. Don't know why. Indeed, when I check the straps to check they have been flashed properly, I see the following
+
+    ...
+    0050:  E9 8F 7A 00 DE 10 81 01 FF FF DF 7F 00 00 00 00
+    0060:  FF FF FF 7F 00 00 00 80 22 00 A5 E1 E9 B4 16 E9
+
+The difference between `82` and `81` in line `0050` is the SubSystem ID we changed in NiBiTor, the difference between `C1` and `E1` in line `0060` is a checksum calculated by nvflash when flashing the straps (you will also get it if you only flash the straps without doing any other change at all), and the `80` of S1-OR is there even though we told nvflash `0x00000000`.
+
+All good, its done! Uninstall drivers, reboot, reinstall drivers…
+
+{:refdef: style="text-align: center;"}
+![](/assets/img/2018-03-16-quforce5800_9.gif){:width="70%"}
+{: refdef}
+
+...properly recognized as a 5800 Ultra, nice! After all this work we have the original BIOS and the new strapped BIOS. Both have DeviceID and straps matched, so flashing either can be done at any time without going through this process again. This allows to change the identity of the card with a single nvflash command and a reboot.
+
+#### 5. example of complete calculation
+
+Here we calculate the straps needed to change a Quadro FX 3000 into a GeForce 5900 Ultra. First, we read the DeviceID from the drivers. Since the only difference is in the last byte, we only translate that one into binary...
+        
+    Quadro FX 3000     : 0338 = 033 1000
+    GeForce 5900 Ultra : 0330 = 033 0000
+    DeviceID bits      :            3210
+
+    Only change is in DeviceID[3]
+    
+Again we deal with an NV3x card, so we only need Strap0 levels. We read the straps with nvflash, rewrite them and notice the Strap0 levels are setup as passthru again (included are Strap1 levels, but they will not be touched)...
+    
+    S0-AND : 7F FF FF FF
+    S0-OR  : 00 00 00 00
+    S1-AND : 00 00 00 00
+    S1-OR  : 80 00 00 10
+    ---
+
+    HW Strap  : 1000   (DeviceID set by resistors)
+    S0-AND    : 1111   (AND)
+    Result    : 1000   (result of bitwise AND)
+    S0-OR     : 0000   (OR)
+    Result    : 1000   (result of bitwise OR, and effective DeviceID)
+    
+We need `0000` as result. Since we can't turn bit off with S0-OR, we change S0-AND to `0111`...
+    
+    DeviceID bits        : xxxx xxxx   xx32 xxxx   xx10 xxxx   xxxx xxxx
+    Old Strap0-AND (HEX) : 7F          FF          FF          FF
+    Old Strap0-AND (BIN) : 0111 1111   1111 1111   1111 1111   1111 1111
+    New Strap0-AND (BIN) : 0111 1111   1101 1111   1111 1111   1111 1111
+    New Strap0-AND (HEX) : 7F          DF          FF          FF
+    
+Straps to flash are `0x7FDFFFFF 0x00000000 0x00000000 0x80000010`. Again, only S0-AND was changed in the process.
+
+---
+## <u>memory voltage and cooling considerations</u>
+I had to do a voltage mod on my card: stock DDR voltage was 2.3V and, as far as I can tell from asking people with real 5800 Ultras and looking at a datasheet for similar Samsung chips, they should run at 2.5V. I brought them up to 2.48V, which gave me some stability when clocking them beyond 400 MHz.
+
+Its a classic voltage divider mod, my only contribution in this case was finding some easily accessible test points that allow for really easy, beginner level soldering. Its easily reversible too.
+
+{:refdef: style="text-align: center;"}
+![](/assets/img/2018-03-16-quforce5800_4.jpg){:width="70%"}
+{: refdef}
+
+Note that after overclocking the card it will run *REALLY* hot. Particularly the RAM chips, so be sure to properly cool them. Here's my card equipped with some low profile heatsinks, they do a good enough job for a memory frequency of 400 MHz, and keep the card as single slot and really silent. Going for 500 MHz on the RAM will require thicker heatsinks and more airflow.
+
+{:refdef: style="text-align: center;"}
+![](/assets/img/2018-03-16-quforce5800_5.jpg){:width="70%"}
+{: refdef}
+
+{:refdef: style="text-align: center;"}
+![](/assets/img/2018-03-16-quforce5800_6.jpg){:width="70%"}
+{: refdef}
+
+---
+## <u>tl;dr</u>
+Here are *recipes* to change the DeviceID of various Quadro cards, the process has 5 steps;
+
+- `nvflash -d 112` to check your card's current strap values. Compare the last 2 lines of the output with the ones in the section of your interest, if the straps match you can proceed.
+- `nvflash -b original.rom` to make a backup of your card's current BIOS. Compress it (important!) and store it somewhere safe.
+- Modify the DeviceID in the BIOS: open `original.rom` with NiBiTor and from the drop down list of cards select the one you want to change to, save the BIOS as `modified.rom`. I recommend you make only this change for now; any other change like frequency, voltage, and bootup message can be done later.
+- `nvflash -j -5 modified.rom` to flash your card with `modified.rom`. This will warn you about changing your card's ID, you will have to type `YES` and then press y when prompted.
+- Flash the new strap values: check the section of your interest for the appropriate command. After flashing I recommend you backup the BIOS now in your card by running `nvflash -b strapped.rom`. You can flash `original.rom` or `strapped.rom` whenever you want to change the card's identity.
+
+~~~~~
+[NV28] Quadro4 980 XGL (0288) (Not supported by NiBiTor!)
+
+Straps
+0050: xx xx xx xx xx xx xx xx FF FF FF 7F 00 00 00 00
+0060: FF FF FF 7F 00 00 00 80 xx xx xx xx xx xx xx xx
+
+...to GeForce4 Ti 4800 (0280)
+nvflash --straps 0x7FDFFFFF 0x00000000 0x7FFFFFFF 0x00000000
+~~~~~
+~~~~~
+[NV34] Quadro FX 500/600 (032B) (Not supported by NiBiTor!)
+
+Straps
+0050: xx xx xx xx xx xx xx xx 3F D0 30 7E 80 20 C0 80
+0060: 00 00 00 00 10 00 00 80 xx xx xx xx xx xx xx xx
+
+...to GeForce FX 5200 Ultra (0321)
+nvflash --straps 0x7E10D03F 0x80C00080 0x00000000 0x00000010
+
+...to GeForce FX 5200 (0322)
+nvflash --straps 0x7E10C03F 0x80C02080 0x00000000 0x00000010
+~~~~~
+~~~~~
+[NV30] Quadro FX 1000 (0309)
+
+Straps
+0050: xx xx xx xx xx xx xx xx FF FF FF 7F 00 00 00 00
+0060: FF FF FF 7F 00 00 00 80 xx xx xx xx xx xx xx xx
+
+...to GeForce FX 5800 Ultra (0301)
+nvflash --straps 0x7FDFFFFF 0x00000000 0x7FFFFFFF 0x00000000
+
+...to GeForce FX 5800 (0302)
+nvflash --straps 0x7FDFEFFF 0x00002000 0x7FFFFFFF 0x00000000
+~~~~~
+~~~~~
+[NV30] Quadro FX 2000 (0308)
+
+Straps
+0050: xx xx xx xx xx xx xx xx FF FF FF 7F 00 00 00 00
+0060: FF FF FF 7F 00 00 00 80 xx xx xx xx xx xx xx xx
+
+...to GeForce FX 5800 Ultra (0301)
+nvflash --straps 0x7FDFFFFF 0x00001000 0x7FFFFFFF 0x00000000
+
+...to GeForce FX 5800 (0302)
+nvflash --straps 0x7FDFFFFF 0x00002000 0x7FFFFFFF 0x00000000
+~~~~~
+~~~~~
+[NV35] Quadro FX 3000 (0338)
+
+Straps
+0050: xx xx xx xx xx xx xx xx FF FF FF 7F 00 00 00 00
+0060: 00 00 00 00 10 00 00 80 xx xx xx xx xx xx xx xx
+
+...to GeForce FX 5900 Ultra (0330)
+nvflash --straps 0x7FDFFFFF 0x00000000 0x00000000 0x00000010
+
+...to GeForce FX 5900 (0331)
+nvflash --straps 0x7FDFFFFF 0x00001000 0x00000000 0x00000010
+~~~~~
+---
+[^1]:This text is redacted from various posts that I first published in a thread by the same name at [vogons.org](https://www.vogons.org/viewtopic.php?p=658119#p658119)
+
+[^2]:I couldn't find the exact datasheet for these markings, but they are the same that can be seen in pictures from reviews of the 5800 Ultra. The datasheet I found for *K4N26323AE* mentions frequencies of 400 MHz (part number *GC25*), 450 MHz (*GC22*) and 500 MHz (*GC20*). The part number on the chip corresponds to the period: *GC22* = 2,2 ns $$\Rightarrow$$ 450 MHz. My personal theory is that these chips we deal with, part number *GC1K*, don't list the period but the DDR frequency: 1K = 1000 DDR = 500 MHz $$\Rightarrow$$ 2,0 ns = *GC20*. At least that was my reasoning to convince myself to increase the frequency while experimenting!
+
+[^real]: I highlight *real* because, as we'll see, the only practical difference is *1 bit*. This is not an argument to convince collectors, though.
+
+[^3]:I refer to the levels based on how they behave functionally. Formally, the *Hardware* level is referred to as *Primary*, the *AND* level is named *Select*, and the *OR* level is called *Secondary*.
+
+[^4]:The software straps also have a disadvantage in that they are only available from NV28 onwards. Cards before the 8X AGP refresh of the GeForce4 line *must* move resistors to change the straps. 
