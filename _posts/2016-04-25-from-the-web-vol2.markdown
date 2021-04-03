@@ -14,6 +14,6 @@ Second round of freebies from the web, with a slight bias for *QFT* material as 
 
 - When in the mood to enjoy classic lectures from famous physicists, look no further than Sidney Coleman's [*Physics 253*](https://www.physics.harvard.edu/events/videos/Phys253) videos, graciously hosted by Harvard. These videos are a difficult watch—the tapes from which they are taken don't offer the best quality—but Coleman's humor and physical insight manage to sift through. The contents of these lectures were typed up and [uploaded to arXiv](https://arxiv.org/abs/1110.5013).
 
-- Delving a bit into Quantum Computing we have Mermin's [*Quantum Computer Science*](http://www.lassp.cornell.edu/mermin/qcomp/CS483.html). These also got picked up by Cambridge University Press and were published under the same name.
+- Delving a bit into Quantum Computing we have Mermin's [*Quantum Computer Science*](http://www.lassp.cornell.edu/mermin/qcomp/CS483.html). These notes also got picked up by Cambridge University Press and were published under the same name.
 
 More later!
