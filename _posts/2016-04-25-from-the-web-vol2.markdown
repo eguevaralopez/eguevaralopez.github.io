@@ -5,7 +5,7 @@ date:   2016-04-25 06:41:00 +0200
 categories: post
 tags: [math, physics, rug, msc]
 ---
-
+<style>body {text-align: justify}</style>
 Second round of freebies from the web, with a slight bias for *QFT* material as I keep studying the subject;
 
 - I have to mention Tong's [*Lectures on Quantum Field Theory*](http://www.damtp.cam.ac.uk/user/tong/qft.html); the videos are terrible quality `wmv` files, but watchable. Those can be skipped though, the real treat are the lecture notes! They are essentially a walkthrough of chapters 1 through 4 of Peskin & Schroeder's ***An Introduction to Quantum Field Theory***.
