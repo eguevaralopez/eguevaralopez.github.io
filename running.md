@@ -8,7 +8,7 @@ Estadísticas de mis salidas a correr, los datos son del 2010-2015 y luego a par
 
 Por completo inspirado en *dailymile*.
 
-| días | horas | min| seg| km corridos| km ascendidos| paso promedio |
+| días | horas | min| seg| km corridos| km ascendidos| paso promedio (min/km) |
 |:----:|:-----:|:--:|:--:|:----------:|:------------:|:-------------:|
 | 8    |	6     |	33	| 59	| 1975.79	   | 20.5	        | 6:02	         |
 
