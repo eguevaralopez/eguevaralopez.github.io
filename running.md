@@ -4,7 +4,7 @@ title: running
 permalink: /running/
 ---
 <style>body {text-align: justify}</style>
-Estadísticas de mis salidas a correr, los datos son del 2010-2015 y luego a partir del 2021. Entre el 2015 y el 2019 no corrí debido a una lesión en mi espalda. Volví a correr en el 2019, pero no tengo datos del 2019-2020.
+Estadísticas de mis salidas a correr, los datos son del 2010-2013 y luego a partir del 2021. Entre el 2014 y el 2019 no corrí debido a una lesión en mi espalda. Volví a correr en el 2019, pero no tengo datos del 2019-2020.
 
 Por completo inspirado en *dailymile*.
 
