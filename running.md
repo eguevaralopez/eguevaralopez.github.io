@@ -19,4 +19,4 @@ Por completo inspirado en *dailymile*.
 
 | calorías quemadas | grasa (kg) | Big Mac (#)| Double Whopper w/Cheese (#)| donas (#)| Trits (#) |
 |:-----------------:|:----------:|:----------:|:--------------------------:|:--------:|:---------:|
-| 184223            |	23.93      |	341       | 188	                       | 408      | 1196      |
+| 184223            |	23.93      |	341       | 188	                       | 408      | 579       |
