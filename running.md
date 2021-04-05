@@ -22,6 +22,6 @@ Las calorías quemadas equivalen a...
 
 Esta sección está inspirada por *dailymile* y sus estadísticas anuales.
 
-Data recopilada del 2010 al 2013 y luego a partir del 2020. Del 2014 hasta el 2019 no corrí debido a una lesión en la espalda. Volví a correr a mediados del 2019, pero no tengo data de ese año.
+Datos recopilados del 2010 al 2013 y luego a partir de Febrero 2020. Del 2014 hasta el 2019 no corrí debido a una lesión en la espalda. Volví a correr a mediados del 2019, pero no tengo datos de ese año.
 
 Última actualización : 2021-04-05
