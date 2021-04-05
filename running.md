@@ -6,7 +6,7 @@ permalink: /running/
 <style>body {text-align: justify}</style>
 Esta sección está completamente inspirada por *dailymile* y sus estadísticas anuales.
 
-Algunos números de mis salidas a correr. Data recopilada del 2010-2013 y luego a partir del 2021. Entre el 2014 y el 2019 no corrí debido a una lesión en mi espalda. Volví a correr en el 2019, pero no tengo data del 2019-2020.
+Data recopilada del 2010-2013 y luego a partir del 2021. Del 2014 al 2019 no corrí debido a una lesión en la espalda. Volví a correr en el 2019, pero no tengo data del 2019-2020.
 
 | tiempo corrido (dd:hh:mm:ss) | distancia corrida (km) | ascenso vertical (km) | paso promedio (min/km) | ~energía usada (kcal) |
 |:----------------------------:|:----------------------:|:---------------------:|:----------------------:|:---------------------:|
