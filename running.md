@@ -6,19 +6,19 @@ permalink: /running/
 <style>body {text-align: justify}</style>
 | tiempo corrido (dd:hh:mm:ss) | distancia corrida (km) | ascenso vertical (km) | paso promedio (min/km) | ~calorías quemadas (kcal) |
 |:----------------------------:|:----------------------:|:---------------------:|:----------------------:|:-------------------------:|
-| 10:05:00:21                  | 2398.40                | 24.00                 | 6:08                   | 223627                    |
+| 10:05:00:25                  | 2400.22                | 24.00                 | 6:07                   | 219490                    |
 
 La distancia recorrida / escalada equivale a...
 
 | radio Tierra (%) | circunferencia Tierra (%) | Muralla China (%) | Chirripó (%) | Everest (%) |
 |:----------------:|:-------------------------:|:-----------------:|:------------:|:-----------:|
-| 37.65%           | 5.98%                     | 11.32%            | 628.14%      | 271.19%     |
+| 37.67%           | 5.99%                     | 11.32%            | 628.14%      | 271.19%     |
 
 Las calorías quemadas equivalen a...
 
 | grasa corporal (kg) | cerveza (latas) | Trits | donas | Big Mac | Double Whopper w/Cheese |
 |:-------------------:|:---------------:|:-----:|:-----:|:-------:|:-----------------------:|
-| 29.04               | 1452            | 703   | 495   | 414     | 228                     |
+| 28.51               | 1425            | 690   | 486   | 406     | 224                     |
 
 Esta sección está inspirada por *dailymile* y sus estadísticas anuales.
 
