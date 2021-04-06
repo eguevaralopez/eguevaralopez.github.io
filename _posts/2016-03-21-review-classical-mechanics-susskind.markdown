@@ -32,7 +32,7 @@ So, would I recommend this book? Yes and no. I would recommend it to undergrad s
 
 ---
 
-#### <u>Extra credit</u>
+#### <u>extra credit</u>
 
 Based on the [2007 version of these lectures](http://theoreticalminimum.com/courses/classical-mechanics/2007/fall) and my own lecture notes from when I watched, I would make the following correspondence from the video lectures of [S]usskind$$\leftrightarrow$$[L]andau & Lifshitz's book;
 
