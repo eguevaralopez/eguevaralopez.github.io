@@ -24,4 +24,6 @@ Esta sección está inspirada por *dailymile* y sus estadísticas anuales.
 
 Datos recopilados del 2010 al 2013 y luego a partir de Febrero 2020. Del 2014 hasta el 2019 no corrí debido a una lesión en la espalda. Volví a correr a mediados del 2019, pero no tengo datos de ese año.
 
+![2010-2020](/assets/img/running_heatmap-old.png)
+
 Última actualización : 2021-04-05
