@@ -3,12 +3,11 @@ layout:      post
 title:       "the story of the QuForce FX 5800 Ultra..."
 date:       2018-03-16 16:12:00 +0200
 categories:  post
-tags: [hardware, retro, mod, nvidia, quadro, geforce]
+tags: [geforce, hardware, mod, nvidia, quadro, retro]
 ---
-<style>body {text-align: justify}</style>
 ### …or, how to turn your cheap Quadro FX 1000 into a GeForce FX 5800 Ultra.[^1]
 
-## <u>intro</u>
+## intro
 About a week ago, while rummaging through *Marktplaats*, I spotted a Quadro FX 1000 that had been mislabeled as Geforce 5200. I've always kept my eyes open for this model or the Quadro FX 2000, mainly because they are based on the *NV30* chip, the same one powering the infamous *dustbuster*: the *GeForce 5800 Ultra*. I went ahead and bought it for €7 + shipping---good deal. Upon arrival I inspected it and noticed the memory chips used in this card are actually the *same ones* used in the GeForce FX 5800 Ultra.[^2]
 
 {:refdef: style="text-align: center;"}
@@ -30,7 +29,7 @@ Why do this?
 - Because you can!
 
 ---
-## <u>the proceedings</u>
+## the proceedings
 
 I knew from the get-go I didn't want to do any *extensive* hardware mods to the card. I'm not averse to soldering and indeed enjoy modding my hardware, but I wanted something that could be easily reversible without whipping out a soldering iron. This meant tinkering with the BIOS. I had never done it extensively, so I was also eager to dive-in and learn a bit about it.
 
@@ -209,7 +208,7 @@ We need `0000` as result. Since we can't turn bit off with S0-OR, we change S0-A
 Straps to flash are `0x7FDFFFFF 0x00000000 0x00000000 0x80000010`. Again, only S0-AND was changed in the process.
 
 ---
-## <u>memory voltage and cooling considerations</u>
+## memory voltage and cooling
 I had to do a voltage mod on my card: stock DDR voltage was 2.3V and, as far as I can tell from asking people with real 5800 Ultras and looking at a datasheet for similar Samsung chips, they should run at 2.5V. I brought them up to 2.48V, which gave me some stability when clocking them beyond 400 MHz.
 
 Its a classic voltage divider mod, my only contribution in this case was finding some easily accessible test points that allow for really easy, beginner level soldering. Its easily reversible too.
@@ -229,7 +228,7 @@ Note that after overclocking the card it will run *REALLY* hot. Particularly the
 {: refdef}
 
 ---
-## <u>tl;dr</u>
+## tl;dr
 Here are *recipes* to change the DeviceID of various Quadro cards, the process has 5 steps;
 
 - `nvflash -d 112` to check your card's current strap values. Compare the last 2 lines of the output with the ones in the section of your interest, if the straps match you can proceed.

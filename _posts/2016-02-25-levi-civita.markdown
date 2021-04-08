@@ -3,9 +3,8 @@ layout: post
 title:  "about those pesky Levi-Civita identities"
 date:   2016-02-25 13:14:00 +0100
 categories: post
-tags: [math, physics, rug, msc]
+tags: [math, msc, physics, rug]
 ---
-<style>body {text-align: justify}</style>
 Let $$E_{ijk}$$ be the matrix formed by using the $$\mathbb{E}^3$$ base vectors $$\mathbf{e}_1,\mathbf{e}_2,\mathbf{e}_3$$ as its rows;
 
 $$

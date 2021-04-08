@@ -1,11 +1,10 @@
 ---
 layout: post
-title:  "review: Classical Mechanics by Leonard Susskind"
+title:  "review: Classical Mechanics, The Theoretical Minimum by Leonard Susskind"
 date:   2016-03-21 04:18:00 +0100
 categories: post
-tags: [math, physics, rug, msc]
+tags: [book review, math, msc, physics, rug]
 ---
-<style>body {text-align: justify}</style>
 I remember watching some of Prof. Susskind's lectures on classical and quantum mechanics when they became available in YouTube, back in 2008. They are advertised as an introduction to high-level physics, but that is a bold claim to make when at the next moment you are reviewing basic calculus. Still, they were lovely refreshers on the subjects at hand.
 
 The CM lectures where a fast-paced introduction to the subject. While not in-depth, they had gems like the opening discussion on what constitutes a physical law by using coins and dies as examples. These simple systems were enough to introduce concepts like reversibility, determinism, conservation laws, symmetries, and phase space. Yet another gem was the aside on the resolving power needed to correctly determine the motion of particles or bodies, it was lovely.
@@ -32,7 +31,7 @@ So, would I recommend this book? Yes and no. I would recommend it to undergrad s
 
 ---
 
-#### <u>extra credit</u>
+#### extra credit
 
 Based on the [2007 version of these lectures](http://theoreticalminimum.com/courses/classical-mechanics/2007/fall) and my own lecture notes from when I watched, I would make the following correspondence from the video lectures of [S]usskind$$\leftrightarrow$$[L]andau & Lifshitz's book;
 

@@ -2,13 +2,14 @@
 layout: post
 title:  "from the web, vol.2—QFT edition"
 date:   2016-04-25 06:41:00 +0200
+#modified_date: 2019-04-25 06:41:00 +0200
+#author: "egl"
 categories: post
-tags: [math, physics, rug, msc]
+tags: [math, msc, physics, rug]
 ---
-<style>body {text-align: justify}</style>
 Second round of freebies from the web, with a slight bias for *QFT* material as I keep studying the subject;
 
-- I have to mention Tong's [*Lectures on Quantum Field Theory*](http://www.damtp.cam.ac.uk/user/tong/qft.html); the videos are terrible quality `wmv` files, but watchable. Those can be skipped though, the real treat are the lecture notes! They are essentially a walkthrough of chapters 1 through 4 of Peskin & Schroeder's ***An Introduction to Quantum Field Theory***.
+- I have to mention Tong's [*Lectures on Quantum Field Theory*](http://www.damtp.cam.ac.uk/user/tong/qft.html); the videos are terrible quality `wmv` files, but watchable. Those can be skipped though, the real treat are the lecture notes! They are essentially a walkthrough of chapters 1 through 4 of Peskin & Schroeder's *An Introduction to Quantum Field Theory*.
 
 - A resource I consult from time to time—when I need more explaining than P&S/Zee can provide, so not too often—is  Srednicki's [*Quantum Field Theory*](http://web.physics.ucsb.edu/~mark/qft.html). Its available as a pre-publication draft, it has since been picked up by Cambridge University Press.
 

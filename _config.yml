@@ -7,7 +7,7 @@ show_excerpts: false # set to true to show excerpts on the homepage
 # Minima date format
 minima:
   date_format: "%Y-%m-%d"
-#  skin: dark
+  skin: classic #classic dark solarized solarized-dark
 
   # generate social links in footer
   social_links:
