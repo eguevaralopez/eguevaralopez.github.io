@@ -1,6 +1,6 @@
 // Placeholder to allow overriding predefined variables smoothly.
-$base-font-family: "Latin Modern Roman";
-$code-font-family: "Latin Modern Mono";
+$base-font-family: "Latin Modern Roman", serif !default;
+$code-font-family: "Latin Modern Mono", monospace !default;
 $base-font-size:   22px;
 $base-font-weight: 400;
 $small-font-size:  $base-font-size * 0.8;
