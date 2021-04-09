@@ -3,18 +3,19 @@ layout: page
 title: running
 permalink: /running/
 ---
-## 2021
 {:refdef: style="text-align: center;"}
 ![2010-2020](/assets/img/running_2021.png)
+**Fig. 1.** Distribución de km durante el año
 {: refdef}
 
-| tiempo (dd:hh:mm:ss) | distancia (km) | ascenso (km) | paso (min/km) | ~calorías (kcal) |
+
+| tiempo (dd:hh:mm:ss) | distancia (km) | ascenso (km) | paso (min/km) | calorías (kcal) |
 |:--------------------:|:--------------:|:------------:|:-------------:|:----------------:|
 | 00:01:24:03          | 12.41          | 0.05         | 6:47          | 1157             |
 
 ## totales
 
-| tiempo (dd:hh:mm:ss) | distancia (km) | ascenso (km) | paso (min/km) | ~calorías (kcal) |
+| tiempo (dd:hh:mm:ss) | distancia (km) | ascenso (km) | paso (min/km) | calorías (kcal) |
 |:--------------------:|:--------------:|:------------:|:-------------:|:----------------:|
 | 10:03:26:37          | 2385.20        | 22.92        | 6:07          | 218089           |
 
@@ -32,6 +33,7 @@ Las calorías quemadas equivalen a...
 
 {:refdef: style="text-align: center;"}
 ![2010-2020](/assets/img/running_2010-2020.png)
+**Fig. 2.** Distribución de km en cada año corrido.
 {: refdef}
 Esta sección está inspirada por *dailymile* y sus estadísticas anuales.
 

@@ -24,11 +24,6 @@ layout: default
             {%- if forloop.last == false %}, {% endif -%}
         {% endfor %}
       {%- endif -%}
-      {%- if page.tags -%}
-		    <br> {% for tag in page.tags %}
-				  <span class="tag">#{{ tag }}</span>
-				{% endfor %}
-			{%- endif -%}
     </p>
   </header>
   <div class="post-content e-content" itemprop="articleBody">
