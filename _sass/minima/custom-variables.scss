@@ -1,9 +1,169 @@
 // Placeholder to allow overriding predefined variables smoothly.
-$base-font-family: "lmodern roman";
-$code-font-family: "lmodern mono";
+
+/*	Computer Modern Serif	*/
+@font-face {
+  font-family: 'ComputerModern Serif';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/assets/fonts/cmunrm-webfont.woff') format('woff'); 
+}
+
+@font-face {
+  font-family: 'ComputerModern Serif';
+  font-style: italic;
+  font-weight: 400;
+  src: url('/assets/fonts/cmunti-webfont.woff') format('woff'); 
+}
+
+@font-face {
+  font-family: 'ComputerModern Serif';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/assets/fonts/cmunbx-webfont.woff') format('woff'); 
+}
+
+@font-face {
+  font-family: 'ComputerModern Serif';
+  font-style: italic;
+  font-weight: 700;
+  src: url('/assets/fonts/cmunbi-webfont.woff') format('woff'); 
+}
+
+/*	Computer Modern Sans	*/
+@font-face {
+  font-family: 'ComputerModern Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/assets/fonts/cmunss-webfont.woff') format('woff'); 
+}
+
+@font-face {
+  font-family: 'ComputerModern Sans';
+  font-style: italic;
+  font-weight: 400;
+  src: url('/assets/fonts/cmunsi-webfont.woff') format('woff'); 
+}
+
+@font-face {
+  font-family: 'ComputerModern Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/assets/fonts/cmunsx-webfont.woff') format('woff'); 
+}
+
+@font-face {
+  font-family: 'ComputerModern Sans';
+  font-style: italic;
+  font-weight: 700;
+  src: url('/assets/fonts/cmunso-webfont.woff') format('woff'); 
+}
+
+/*	Computer Modern Typewriter	*/
+@font-face {
+  font-family: 'ComputerModern Typewriter';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/assets/fonts/cmuntt-webfont.woff') format('woff'); 
+}
+
+@font-face {
+  font-family: 'ComputerModern Typewriter';
+  font-style: italic;
+  font-weight: 400;
+  src: url('/assets/fonts/cmunit-webfont.woff') format('woff'); 
+}
+
+@font-face {
+  font-family: 'ComputerModern Typewriter';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/assets/fonts/cmuntb-webfont.woff') format('woff'); 
+}
+
+@font-face {
+  font-family: 'ComputerModern Typewriter';
+  font-style: italic;
+  font-weight: 700;
+  src: url('/assets/fonts/cmuntx-webfont.woff') format('woff'); 
+}
+
+/*	Latin Modern Roman	*/
+@font-face {
+  font-family: 'LatinModern Roman';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/assets/fonts/lmroman10-regular-webfont.woff') format('woff'); 
+}
+
+@font-face {
+  font-family: 'LatinModern Roman';
+  font-style: italic;
+  font-weight: 400;
+  src: url('/assets/fonts/lmroman10-italic-webfont.woff') format('woff'); 
+}
+
+@font-face {
+  font-family: 'LatinModern Roman';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/assets/fonts/lmroman10-bold-webfont.woff') format('woff'); 
+}
+
+@font-face {
+  font-family: 'LatinModern Roman';
+  font-style: italic;
+  font-weight: 700;
+  src: url('/assets/fonts/lmroman10-bolditalic-webfont.woff') format('woff'); 
+}
+
+/*	Latin Modern Sans	*/
+@font-face {
+  font-family: 'LatinModern Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/assets/fonts/lmsans10-regular-webfont.woff') format('woff'); 
+}
+
+@font-face {
+  font-family: 'LatinModern Sans';
+  font-style: italic;
+  font-weight: 400;
+  src: url('/assets/fonts/lmsans10-oblique-webfont.woff') format('woff'); 
+}
+
+@font-face {
+  font-family: 'LatinModern Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/assets/fonts/lmsans10-bold-webfont.woff') format('woff'); 
+}
+
+@font-face {
+  font-family: 'LatinModern Sans';
+  font-style: italic;
+  font-weight: 700;
+  src: url('/assets/fonts/lmsans10-boldoblique-webfont.woff') format('woff'); 
+}
+
+/*	Latin Modern Mono	*/
+@font-face {
+  font-family: 'LatinModern Mono';
+    font-weight: normal;
+    font-style: normal;
+    src: url('/assets/fonts/lmmono10-regular-webfont.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'LatinModern Mono';
+    font-weight: normal;
+    font-style: italic;
+    src: url('/assets/fonts/lmmono10-italic-webfont.woff') format('woff');
+}
+$base-font-family: "ComputerModern Serif";
+$code-font-family: "ComputerModern Typewriter";
 
 $base-font-size:   22px;
-//$base-font-weight: 400;
+$base-font-weight: 400;
 $small-font-size:  $base-font-size * 0.8;
 $base-line-height: 1.3;
 
