@@ -3,11 +3,11 @@ layout:      post
 title:       "upeb: a new hope"
 date:       2021-04-08 09:15:00 -0600
 categories:  post
-tags: [blogging, jekyll]
+tags: [blogging, jekyll, latex, tipography]
 ---
 Gracias a un pequeño empujón de mi amigo [Hans](https://hansga.vercel.app/), quien me explicó cómo montar fácilmente un blog utilizando **Jekyll** y **GitHub Pages**, he decidido empezar a escribir de nuevo.
 
-Aunque estoy bastante satisfecho con el tema por defecto de Jekyll, decidí modificar la **tipografía** del sitio. En esencia, quiero que se parezca lo más posible a un libro escrito en $$\mathrm{\LaTeX}$$, *sin importar el dispositivo donde se lea*.  Lo primero que hice fue agregar el siguiente código al final del archivo `_includes/custom-head.html`;
+Aunque estoy bastante satisfecho con el tema por defecto de Jekyll, decidí modificar la **tipografía** del sitio: quiero que se parezca lo más posible a un libro escrito en $$\mathrm{\LaTeX}$$, *sin importar el dispositivo donde se lea*.  Lo primero que hice fue agregar el siguiente código al final del archivo `_includes/custom-head.html`;
 ~~~
 <script type="text/javascript" id="MathJax-script" async
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
@@ -52,7 +52,7 @@ Añadí los archivos pertinentes de *Computer Modern Roman* al directorio `/asse
 
 $base-font-family: "CM Roman";
 ~~~
-Los primeros 4 *bloques* definen la fuente en cada uno de los casos usuales---normal, cursiva, negrita, cursiva-negrita---, la última línea cambia la fuente por defecto del tema a la fuente que recién definí. Hice exactamente los mismo para la fuente *Computer Modern Typewriter*, referenciando a los archivos relevantes y haciéndola fuente por defecto para desplegar código `$code-font-family: "CM Typewriter";`
+Los primeros 4 *bloques* definen la fuente en cada uno de los casos usuales---normal, cursiva, negrita, cursiva--negrita---, la última línea cambia la fuente por defecto del tema a la fuente que recién definí. Hice exactamente los mismo para la fuente *Computer Modern Typewriter*, referenciando a los archivos relevantes y haciéndola fuente por defecto para desplegar código, `$code-font-family: "CM Typewriter";`
 
 Tengo la intención de agregar otras fuentes al sitio, las familias [Source Serif Pro](https://www.fontsquirrel.com/fonts/source-serif-pro), [Source Sans Pro](https://www.fontsquirrel.com/fonts/source-sans-pro) y [Source Code Pro](https://www.fontsquirrel.com/fonts/source-code-pro) de **Adobe**, por ejemplo; o la familia [Plex](https://www.fontsquirrel.com/fonts/ibm-plex) de **IBM**. Me resulta atractivo el poder cambiar sutilmente el aspecto de cada post con fuentes distintas.
 
@@ -72,4 +72,4 @@ También probé añadir *justificación* al texto, pero de momento he decidido n
 
 Un último añadido, en el que aún estoy trabajando, tiene que ver con los `tags` que Jekyll permite adherir a cada post. Por defecto no hacen nada y no se ven reflejados en ningún lado. Me gustaría cambiar eso, pero de la forma menos intrusiva posible. De momento estoy feliz con el resultado de los cambios hechos.
 
-He intentado recuperar algunos posts interesantes---al menos para mí---que escribí en el pasado, con el fin de ir poblando el sitio`. Cualquier contenido previo al 2021 fue escrito en otro lugar y migrado acá.
+He intentado recuperar algunos posts interesantes---al menos para mí---que escribí en el pasado, con el fin de ir poblando el sitio. Cualquier contenido previo al 2021 fue escrito en otro lugar y migrado acá.
