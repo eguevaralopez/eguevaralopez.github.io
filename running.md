@@ -3,38 +3,40 @@ layout: page
 title: running
 permalink: /running/
 ---
-{:refdef: style="text-align: center;"}
-![2010-2020](/assets/img/running_2021.png)
-**Fig. 1.** Distribución de km durante el año
-{: refdef}
-
+{% assign row = site.data.dailymilesque_stats[1] %}
 
 | tiempo (dd:hh:mm:ss) | distancia (km) | ascenso (km) | paso (min/km) | calorías (kcal) |
 |:--------------------:|:--------------:|:------------:|:-------------:|:----------------:|
-| 00:01:24:03          | 12.41          | 0.05         | 6:47          | 1157             |
+| {{ row["tiempo (dd:hh:mm:ss)"] }} | {{ row["distancia (km)"] }} | {{ row["ascenso (km)"] }} | {{ row["paso (min/km)"] }} | {{ row["calorías (kcal)"] }} |
 
-## totales
+<figure>
+  <img src="/assets/img/running_2021.png" alt="" style="width:100%">
+  <figcaption><b>Fig. 1.</b> Concentración de km durante el año.</figcaption>
+</figure>
+## totales[^1]
+Sección inspirada por las estadísticas anuales que presentaba *dailymile*. Muchas de las virtudes de ese servicio---y más---las veo ahora en [*Strava*](https://www.strava.com/).
+
+{% assign row = site.data.dailymilesque_stats[0] %}
 
 | tiempo (dd:hh:mm:ss) | distancia (km) | ascenso (km) | paso (min/km) | calorías (kcal) |
 |:--------------------:|:--------------:|:------------:|:-------------:|:----------------:|
-| 10:03:26:37          | 2385.20        | 22.92        | 6:07          | 218089           |
+| {{ row["tiempo (dd:hh:mm:ss)"] }} | {{ row["distancia (km)"] }} | {{ row["ascenso (km)"] }} | {{ row["paso (min/km)"] }} | {{ row["calorías (kcal)"] }} |
 
 La distancia recorrida / escalada equivale a...
 
 | radio Tierra (%) | circunferencia Tierra (%) | Muralla China (%) | Chirripó (%) | Everest (%) |
 |:----------------:|:-------------------------:|:-----------------:|:------------:|:-----------:|
-| 37.44%           | 5.95%                     | 11.25%            | 599.87%      | 258.99%     |
+| {{ row["radio Tierra (%)"] }} | {{ row["circunferencia Tierra (%)"] }} | {{ row["Muralla China (%)"] }} | {{ row["Chirripó (%)"] }} | {{ row["Everest (%)"] }} |
 
 Las calorías quemadas equivalen a...
 
 | grasa corporal (kg) | cerveza (latas) | Trits | donas | Big Mac | Double Whopper w/Cheese |
 |:-------------------:|:---------------:|:-----:|:-----:|:-------:|:-----------------------:|
-| 28.32               | 1416            | 686   | 482   | 404     | 223                     |
+| {{ row["grasa corporal (kg)"] }} | {{ row["cerveza (latas)"] }} | {{ row["Trits"] }} | {{ row["donas"] }} | {{ row["Big Mac"] }} | {{ row["Double Whopper w/Cheese"] }} |
 
-{:refdef: style="text-align: center;"}
-![2010-2020](/assets/img/running_2010-2020.png)
-**Fig. 2.** Distribución de km en cada año corrido.
-{: refdef}
-Esta sección está inspirada por *dailymile* y sus estadísticas anuales.
+<figure>
+  <img src="/assets/img/running_2010-2020.png" alt="" style="width:100%">
+  <figcaption><b>Fig. 2.</b> Concentración de km través de los años.</figcaption>
+</figure>
 
-Datos recopilados del 2010 al 2013 y luego a partir de Febrero 2020. Del 2014 hasta el 2019 no corrí debido a una lesión en la espalda. Volví a correr a mediados del 2019, pero no tengo datos de ese año.
+[^1]: Los datos fueron recopilados del 2010 al 2013 y luego a partir de Febrero 2020. Del 2014 hasta el 2019 no corrí regularmente debido a una lesión en la espalda. Volví a correr en Octubre del 2019, pero no tengo los datos.

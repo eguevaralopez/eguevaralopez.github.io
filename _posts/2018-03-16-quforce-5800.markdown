@@ -299,7 +299,7 @@ nvflash --straps 0x7FDFFFFF 0x00000000 0x00000000 0x00000010
 ...to GeForce FX 5900 (0331)
 nvflash --straps 0x7FDFFFFF 0x00001000 0x00000000 0x00000010
 ~~~~~
----
+
 [^1]:This text is redacted from various posts that I first published in a thread by the same name at [vogons.org](https://www.vogons.org/viewtopic.php?p=658119#p658119)
 
 [^2]:I couldn't find the exact datasheet for these markings, but they are the same that can be seen in pictures from reviews of the 5800 Ultra. The datasheet I found for *K4N26323AE* mentions frequencies of 400 MHz (part number *GC25*), 450 MHz (*GC22*) and 500 MHz (*GC20*). The part number on the chip corresponds to the period: *GC22* = 2,2 ns $$\Rightarrow$$ 450 MHz. My personal theory is that these chips we deal with, part number *GC1K*, don't list the period but the DDR frequency: 1K = 1000 DDR = 500 MHz $$\Rightarrow$$ 2,0 ns = *GC20*. At least that was my reasoning to convince myself to increase the frequency while experimenting!

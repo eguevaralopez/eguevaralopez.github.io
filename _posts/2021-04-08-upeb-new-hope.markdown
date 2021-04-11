@@ -1,14 +1,16 @@
 ---
 layout:      post
-title:       "upeb: a new hope"
+title:       "modificando la tipografía de upeb, p.1"
 date:       2021-04-08 09:15:00 -0600
 categories:  post
 tags: [blogging, jekyll, latex, tipography]
 ---
+### upeb: a new hope
 Gracias a un pequeño empujón de mi amigo [Hans](https://hansga.vercel.app/), quien me explicó cómo montar fácilmente un blog utilizando **Jekyll** y **GitHub Pages**, he decidido empezar a escribir de nuevo.
 
+---
 Aunque estoy bastante satisfecho con el tema por defecto de Jekyll, decidí modificar la **tipografía** del sitio: quiero que se parezca lo más posible a un libro escrito en $$\mathrm{\LaTeX}$$, *sin importar el dispositivo donde se lea*.  Lo primero que hice fue agregar el siguiente código al final del archivo `_includes/custom-head.html`;
-```html
+```
 <script type="text/javascript" id="MathJax-script" async
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
 </script>
@@ -20,7 +22,7 @@ El siguiente paso fue descargar la fuente [**Computer Modern**](https://www.font
 Computer Modern es más que una fuente, es una *familia de fuentes*. Dentro de esa familia de fuentes hay una fuente con serifa (Roman), una sin serifa (Sans Serif) y otras variaciones. Cada una de esas fuentes tiene, generalmente, 4 estilos básicos: normal, cursiva, negrita y cursiva-negrita. Entonces, para agregar una fuente al sitio, necesito definir esa fuente dentro del `css` y decir cómo se va a comportar en cada uno de los 4 casos mencionados.
 
 Añadí los archivos pertinentes de *Computer Modern Roman* al directorio `/assets/fonts/` y modifiqué el archivo `_sass/minima/custom-variables.scss`, añadiendo el siguiente código:
-```css
+```
 /*	Computer Modern Roman	*/
 @font-face {
   font-family: 'CM Roman';
@@ -57,14 +59,14 @@ Los primeros 4 *bloques* definen la fuente en cada uno de los casos usuales---no
 Tengo la intención de agregar otras fuentes al sitio, las familias [Source Serif Pro](https://www.fontsquirrel.com/fonts/source-serif-pro), [Source Sans Pro](https://www.fontsquirrel.com/fonts/source-sans-pro) y [Source Code Pro](https://www.fontsquirrel.com/fonts/source-code-pro) de **Adobe**, por ejemplo; o la familia [Plex](https://www.fontsquirrel.com/fonts/ibm-plex) de **IBM**. Me resulta atractivo el poder cambiar sutilmente el aspecto de cada post con fuentes distintas.
 
 Otros pequeños ajustes hechos en el archivo `_sass/minima/custom-variables.scss` son variar el tamaño de la fuente, variar el tamaño de la fuente pequeña[^1], variar el espacio de interlineado y cambiar el color de los bloques de código. Todo eso lo hice añadiendo estas líneas
-```css
+```
 $base-font-size: 20px;
 $small-font-size: $base-font-size * 0.8;
 $base-line-height: 1.3;
 $code-background-color: lighten($brand-color, 43%);
 ```
 También probé añadir *justificación* al texto, pero de momento he decidido no usarlo. Se puede lograr modificando `_sass/minima/custom_styles.scss` con el código
-```css
+```
 .post-content {
 	text-align: justify;
 }
