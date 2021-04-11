@@ -11,7 +11,7 @@ tags: [geforce, hardware, mod, nvidia, quadro, retro]
 About a week ago, while rummaging through *Marktplaats*, I spotted a Quadro FX 1000 that had been mislabeled as Geforce 5200. I've always kept my eyes open for this model or the Quadro FX 2000, mainly because they are based on the *NV30* chip, the same one powering the infamous *dustbuster*: the *GeForce 5800 Ultra*. I went ahead and bought it for €7 + shipping---good deal. Upon arrival I inspected it and noticed the memory chips used in this card are actually the *same ones* used in the GeForce FX 5800 Ultra.[^2]
 
 {:refdef: style="text-align: center;"}
-![Memory chips, marked K4N26323AE-GC1K](/assets/img/2018-03-16-quforce5800_1.jpg){:width="70%"}
+![](/assets/img/2018-03-16-quforce5800_1.jpg){:width="70%"}
 {: refdef}
 
 {:refdef: style="text-align: center;"}

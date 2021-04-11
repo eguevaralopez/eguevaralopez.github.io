@@ -19,6 +19,4 @@ Because a grad student's money is better spent on food and drink, here is a comp
 
 I'm always on the lookout for quality stuff, so there will probably be other posts like this one in the future.
 
----
-
 [^1]: Preferably 3rd edition, because its the one [Wolfram MathWorld](https://mathworld.wolfram.com/) uses as reference.

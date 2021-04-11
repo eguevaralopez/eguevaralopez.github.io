@@ -6,3 +6,28 @@
 	text-align: justify;
 }
 */
+
+.footnotes p {
+//  text-align: left;
+//  line-height: 1.3;
+  font-size: $small-font-size;
+  margin-top: 0.4rem;
+}
+.footnotes {
+  font-size: $small-font-size;
+  border-top: 1px solid hsl(0, 0%, 75%);
+}
+
+// estos cambian el tamano del numero DENTRO del texto principal
+/*
+a.footnote {
+	font-size: 14px;
+}
+a.footnote:before {
+	content: "[";
+}
+
+a.footnote:after {
+	content: "]";
+}
+*/

@@ -19,5 +19,4 @@ Second round of freebies from the web, with a slight bias for *Quantum Field The
 
 More later.
 
----
 [^1]: Somewhat of a theme for me.
