@@ -1,7 +1,7 @@
 tiempo (dd:hh:mm:ss),distancia (km),ascenso (km),paso (min/km),calorías (kcal),radio Tierra (%),circunferencia Tierra (%),Muralla China (%),Chirripó (%),Everest (%),grasa corporal (kg),cerveza (latas),Trits,donas,Big Mac,Double Whopper w/Cheese
-10:03:46:55,2388.31,22.93,6:07,218379,37.49%,5.96%,11.27%,600.18%,259.12%,28.36,1418,687,483,404,223
-00:01:44:21,15.52,0.06,6:43,1447,,,,,,,,,,,
+10:04:07:01,2391.41,22.94,6:07,218668,37.54%,5.97%,11.28%,600.50%,259.26%,28.4,1420,688,484,405,223
+00:02:04:27,18.62,0.07,6:41,1736,,,,,,,,,,,
 total time (s),total distance(m),total climb (m),total energy (kcal),,,,,,,,,,,,
-877615,2388312.5,22927,218379,,,,,,,,,,,,
+878821,2391407.6,22939,218668,,,,,,,,,,,,
 2021 time (s),2021 distance(m),2021 climb (m),https://fitness.stackexchange.com/questions/15608/energy-expenditure-calories-burned-equation-for-running/36045#36045,,,,,,,,,,,,
-6261,15522.5,60,1447,,,,,,,,,,,,
+7467,18617.6,72,1736,,,,,,,,,,,,

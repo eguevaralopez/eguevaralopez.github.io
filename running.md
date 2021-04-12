@@ -3,32 +3,35 @@ layout: page
 title: running
 permalink: /running/
 ---
-{% assign row = site.data.dailymilesque_stats[1] %}
-
-| tiempo (dd:hh:mm:ss) | distancia (km) | ascenso (km) | paso (min/km) | calorías (kcal) |
-|:--------------------:|:--------------:|:------------:|:-------------:|:----------------:|
-| {{ row["tiempo (dd:hh:mm:ss)"] }} | {{ row["distancia (km)"] }} | {{ row["ascenso (km)"] }} | {{ row["paso (min/km)"] }} | {{ row["calorías (kcal)"] }} |
-
 <figure>
   <img src="/assets/img/running_2021.png" alt="" style="width:100%">
   <figcaption><b>Fig. 1.</b> Concentración de km durante el año.</figcaption>
 </figure>
+
+{% assign row = site.data.dailymilesque_stats[1] %}
+
+| distancia (km) | paso (min/km) | tiempo (dd:hh:mm:ss) | ascenso (km) | calorías (kcal) |
+|:--------------:|:-------------:|:--------------------:|:------------:|:---------------:|
+| {{ row["distancia (km)"] }} | {{ row["paso (min/km)"] }} | {{ row["tiempo (dd:hh:mm:ss)"] }} | {{ row["ascenso (km)"] }} | {{ row["calorías (kcal)"] }} |
+
 ## totales[^1]
-Sección inspirada por las estadísticas anuales que presentaba *dailymile*. Muchas de las virtudes de ese servicio---y más---las veo ahora en [*Strava*](https://www.strava.com/).
+Sección inspirada por las estadísticas que presentaba *dailymile*. Muchas de las virtudes de ese servicio las veo presentes en [*Strava*](https://www.strava.com/).
 
 {% assign row = site.data.dailymilesque_stats[0] %}
 
-| tiempo (dd:hh:mm:ss) | distancia (km) | ascenso (km) | paso (min/km) | calorías (kcal) |
-|:--------------------:|:--------------:|:------------:|:-------------:|:----------------:|
-| {{ row["tiempo (dd:hh:mm:ss)"] }} | {{ row["distancia (km)"] }} | {{ row["ascenso (km)"] }} | {{ row["paso (min/km)"] }} | {{ row["calorías (kcal)"] }} |
+| distancia (km) | paso (min/km) | tiempo (dd:hh:mm:ss) | ascenso (km) | calorías (kcal) |
+|:--------------:|:-------------:|:--------------------:|:------------:|:---------------:|
+| {{ row["distancia (km)"] }} | {{ row["paso (min/km)"] }} | {{ row["tiempo (dd:hh:mm:ss)"] }} | {{ row["ascenso (km)"] }} | {{ row["calorías (kcal)"] }} |
 
-La distancia recorrida / escalada equivale a...
+{::comment}
+| radio Tierra (%) 
+|:----------------:
+| {{ row["radio Tierra (%)"] }} 
+{:/comment}
 
-| radio Tierra (%) | circunferencia Tierra (%) | Muralla China (%) | Chirripó (%) | Everest (%) |
-|:----------------:|:-------------------------:|:-----------------:|:------------:|:-----------:|
-| {{ row["radio Tierra (%)"] }} | {{ row["circunferencia Tierra (%)"] }} | {{ row["Muralla China (%)"] }} | {{ row["Chirripó (%)"] }} | {{ row["Everest (%)"] }} |
-
-Las calorías quemadas equivalen a...
+| circunferencia Tierra (%) | Muralla China (%) | Chirripó (%) | Everest (%) |
+|:-------------------------:|:-----------------:|:------------:|:-----------:|
+| {{ row["circunferencia Tierra (%)"] }} | {{ row["Muralla China (%)"] }} | {{ row["Chirripó (%)"] }} | {{ row["Everest (%)"] }} |
 
 | grasa corporal (kg) | cerveza (latas) | Trits | donas | Big Mac | Double Whopper w/Cheese |
 |:-------------------:|:---------------:|:-----:|:-----:|:-------:|:-----------------------:|
