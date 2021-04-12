@@ -1,0 +1,8 @@
+---
+layout:      post
+title:       "paradoja"
+date:       2011-01-03 21:19:35 -0600
+categories:  post
+tags: [fotos]
+---
+![](/assets/img/2011-01-03-upeb.jpg)

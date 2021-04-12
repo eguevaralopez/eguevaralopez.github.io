@@ -3,7 +3,7 @@ layout:      post
 title:       "modificando la tipografía de upeb, p.1"
 date:       2021-04-08 09:15:00 -0600
 categories:  post
-tags: [blogging, jekyll, latex, tipography]
+tags: [jekyll, latex, typography]
 ---
 ### upeb: a new hope
 Gracias a un pequeño empujón de mi amigo [Hans](https://hansga.vercel.app/), quien me explicó cómo montar fácilmente un blog utilizando **Jekyll** y **GitHub Pages**, he decidido empezar a escribir de nuevo.

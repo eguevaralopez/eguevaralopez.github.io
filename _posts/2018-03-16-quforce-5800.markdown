@@ -3,7 +3,7 @@ layout:      post
 title:       "the story of the QuForce FX 5800 Ultra..."
 date:       2018-03-16 16:12:00 +0200
 categories:  post
-tags: [geforce, hardware, mod, nvidia, quadro, retro]
+tags: [hardware, mod, retro]
 ---
 ### …or, how to turn your cheap Quadro FX 1000 into a GeForce FX 5800 Ultra.[^1]
 

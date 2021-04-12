@@ -3,7 +3,7 @@ layout: post
 title:  "review: Classical Mechanics, The Theoretical Minimum by Leonard Susskind"
 date:   2016-03-21 04:18:00 +0100
 categories: post
-tags: [book review, math, msc, physics, rug]
+tags: [bookReview, math, msc, physics, rug]
 ---
 I remember watching some of Prof. Susskind's lectures on classical and quantum mechanics when they became available in YouTube, back in 2008. They are advertised as an introduction to high-level physics, but that is a bold claim to make when at the next moment you are reviewing basic calculus. Still, they were lovely refreshers on the subjects at hand.
 
