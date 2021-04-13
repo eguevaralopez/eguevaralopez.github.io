@@ -1,6 +1,13 @@
+_includes
+_layouts
 _site
 .sass-cache
 .jekyll-cache
 .jekyll-metadata
 vendor
 _drafts
+Gemfile
+Gemfile.lock
+_config.yml
+minima.gemspec
+script
