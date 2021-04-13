@@ -6,6 +6,5 @@ vendor
 _drafts
 Gemfile
 Gemfile.lock
-_config.yml
 minima.gemspec
 script
