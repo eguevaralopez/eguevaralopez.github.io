@@ -1,5 +1,3 @@
-// Placeholder to allow defining custom styles that override everything else.
-// (Use `_sass/minima/custom-variables.scss` to override variable defaults)
 
 /*
 .post-content {
@@ -7,6 +5,9 @@
 }
 */
 
+/*************
+ * Footnotes *
+ *************/
 .footnotes p {
 //  text-align: left;
 //  line-height: 1.3;
@@ -17,18 +18,78 @@
   font-size: $small-font-size;
   border-top: 1px solid hsl(0, 0%, 75%);
 }
-
 a.footnote {
-	font-size: $small-font-size;
+  //font-size: 14px;
+  font-size: $small-font-size;
+}
+//a.footnote:before {
+//	content: "[";
+//}
+//a.footnote:after {
+//	content: "]";
+//}
+
+/*********
+ * Links *
+ *********/
+a {
+  color: $link-base-color;
+  text-decoration: none;
+
+  &:visited {
+    color: $link-visited-color;
+  }
+
+  &:hover {
+    color: $link-hover-color;
+    text-decoration: none;
+  }
+
+  .social-media-list &:hover {
+    text-decoration: none;
+
+    .username {
+      text-decoration: underline;
+    }
+  }
+}
+/*****************
+ * Running stats *
+ *****************/
+span.run_display {
+  font-size: 40px;
+  font-weight: bold;
 }
 
-// estos cambian el tamano del numero DENTRO del texto principal
-/*
-a.footnote:before {
-	content: "[";
+span.run_number {
+  font-size: 32px;
+  font-weight: bold;
 }
 
-a.footnote:after {
-	content: "]";
+span.run_unit {
+  font-size: 24px;
+  font-weight: bold;
 }
-*/
+
+table.run_display {
+//  border-collapse: collapse;
+  width: auto;
+  border: none;
+}
+
+td.run_display, th.run_display {
+  border: none;
+  text-align: center;
+}
+
+table.run {
+//  border-collapse: collapse;
+  width: auto;
+  border: none;
+}
+
+td.run, th.run {
+  border: none;
+  text-align: center;
+  vertical-align: top;
+}
