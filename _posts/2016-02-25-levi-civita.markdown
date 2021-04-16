@@ -101,5 +101,3 @@ Letting the last set of indices be the same in equation $$\eqref{3}$$, the final
 $$
 \epsilon_{ijk}\epsilon^{ijk}=6\tag{4}\label{4}
 $$
-
-
