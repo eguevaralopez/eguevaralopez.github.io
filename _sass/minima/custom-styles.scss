@@ -1,4 +1,3 @@
-/*
 body.sspro {
   font-family: 'SourceSerif Pro';
 }
@@ -8,12 +7,15 @@ body.plexs {
 body.chart {
   font-family: 'Charter';
 }
-
+/*
 .post-content {
 	text-align: justify;
+	hyphens: auto;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  margin-top: 1rem;
 }
 */
-
 /*************
  * Footnotes *
  *************/
