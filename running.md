@@ -3,6 +3,19 @@ layout: page
 title: running
 permalink: /running/
 ---
+{::comment}
+<script src="//d3plus.org/js/d3.js"></script>
+<script src="//d3plus.org/js/d3plus.js"></script>
+<link rel="stylesheet" href="/assets/css/cal-heatmap.css" />
+<script type="text/javascript" src="/assets/cal-heatmap.js"></script>
+
+<div id="cal-heatmap"></div>
+<script type="text/javascript">
+	var cal = new CalHeatMap();
+	cal.init({});
+</script>
+{:/comment}
+
 <figure>
   <img src="/assets/img/running_2021.png" alt="" style="width:100%">
   <figcaption><b>Fig. 1.</b> Concentración de km durante el año.</figcaption>

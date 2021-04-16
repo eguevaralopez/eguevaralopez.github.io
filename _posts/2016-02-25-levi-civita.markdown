@@ -2,6 +2,7 @@
 layout: post
 title:  "about those pesky Levi-Civita identities"
 date:   2016-02-25 13:14:00 +0100
+modified_date: 2021-04-14 18:04:29 +0600
 categories: post
 tags: [math, msc, physics, rug]
 ---
@@ -9,102 +10,96 @@ Let $$E_{ijk}$$ be the matrix formed by using the $$\mathbb{E}^3$$ base vectors 
 
 $$
 \begin{align*}
-	E_{ijk} &=
-	\begin{pmatrix}
-		\mathbf{e}_i\\
-		\mathbf{e}_j\\
-		\mathbf{e}_k
-	\end{pmatrix}\\
-	\Rightarrow(E_{ijk})^T &= \left(\mathbf{e}^i\,\mathbf{e}^j\,\mathbf{e}^k\right)\equiv E^{ijk}
+  E_{ijk} &=
+  \begin{pmatrix}
+    \mathbf{e}_i\\
+    \mathbf{e}_j\\
+    \mathbf{e}_k
+  \end{pmatrix}\\
+  \Rightarrow(E_{ijk})^T &= \left(\mathbf{e}^i\,\mathbf{e}^j\,\mathbf{e}^k\right)\equiv E^{ijk}
 \end{align*}
 $$
 
 Now consider the determinant of $$E_{ijk}$$;
 
 $$
-\det(E_{ijk})=
-\begin{cases}
-	(-1)^{\sigma(ijk)}\\
-	0
-\end{cases}
+  \det(E_{ijk})=
+  \begin{cases}
+    (-1)^{\sigma(ijk)}\\
+    0
+  \end{cases}
 $$
 
-The first case describes  exchange of rows (permutation of indices), and the second case describes repeated rows (repeated indices). This is exactly the definition of the antisymmetric *Levi-Civita tensor* on $$\mathbb{E}^3$$;
+The first case describes exchange of rows (permutation of indices), and the second case describes repeated rows (repeated indices). This is exactly the definition of the antisymmetric *Levi-Civita tensor* on $$\mathbb{E}^3$$,
 
 $$
 \epsilon_{ijk}\equiv\det(E_{ijk})
 $$
 
-With this in mind we can derive some useful identities.
-
----
+I found this *extremely* helpful for proving and remembering the Levi-Civita identities, which we can now easily derive---they're just a product of determinants. Consider the product,
 
 $$
 \begin{align*}
-	\epsilon_{ijk}\epsilon^{lmn} &=\det(E_{ijk})\det(E^{lmn})\\
-	&=\det(E_{ijk}E^{lmn})\\
-%
-%	&=\left|\begin{pmatrix}
-%		\mathbf{e}_{i}\\\mathbf{e}_{j}\\\mathbf{e}_{k}
-%	\end{pmatrix}\left(\mathbf{e}^{l}\,\mathbf{e}^{m}\,\mathbf{e}^{n}\right)
-%	\right|\\
-%
-	&=\left|\begin{matrix}
-		\delta_{i}^{l} & \delta_{i}^{m} & \delta_{i}^{n} \\
-		\delta_{j}^{l} & \delta_{j}^{m} & \delta_{j}^{n} \\
-		\delta_{k}^{l} & \delta_{k}^{m} & \delta_{k}^{n}
-	\end{matrix}\right|
+  \epsilon_{ijk}\epsilon^{lmn} &=\det(E_{ijk})\det(E^{lmn})\\
+  &=\det(E_{ijk}E^{lmn})\\
+  &=\left|\begin{matrix}
+    \delta_{i}^{l} & \delta_{i}^{m} & \delta_{i}^{n} \\
+    \delta_{j}^{l} & \delta_{j}^{m} & \delta_{j}^{n} \\
+    \delta_{k}^{l} & \delta_{k}^{m} & \delta_{k}^{n}
+  \end{matrix}\right|
 \end{align*}
 $$
 
-Where we used $$\delta_i^j=\mathbf{e}_i\mathbf{e}^j$$. All Levi-Civita identities follow from this determinant, so we will expand it;
+Where we used $$\mathbf{e}_i\mathbf{e}^j=\delta_i^j$$. Expanding this determinant we have,
 
 $$
-\begin{split}
-	\epsilon_{ijk}\epsilon^{lmn} &= \delta_{i}^{l}\delta_{j}^{m}\delta_{k}^{n} +
-	\delta_{i}^{m}\delta_{j}^{n}\delta_{k}^{l}+\delta_{i}^{n}\delta_{j}^{l}\delta_{k}^{m}\\
-	&\quad\quad-\delta_{i}^{n}\delta_{j}^{m}\delta_{k}^{l}-\delta_{i}^{m}\delta_{j}^{l}\delta_{k}^{n}-
-	\delta_{i}^{l}\delta_{j}^{n}\delta_{k}^{m}
-\end{split}\label{1}\tag{1}
+\begin{aligned}
+  \epsilon_{ijk}\epsilon^{lmn}=\delta_{i}^{l}\delta_{j}^{m}\delta_{k}^{n}
+  &+\delta_{i}^{m}\delta_{j}^{n}\delta_{k}^{l}
+  +\delta_{i}^{n}\delta_{j}^{l}\delta_{k}^{m}\\
+  &-\delta_{i}^{n}\delta_{j}^{m}\delta_{k}^{l}
+  -\delta_{i}^{m}\delta_{j}^{l}\delta_{k}^{n}
+  -\delta_{i}^{l}\delta_{j}^{n}\delta_{k}^{m}
+\end{aligned}\tag{1}\label{1}
 $$
 
----
-To prove
+Now, if we set $$n=k$$ in equation $$\eqref{1}$$ we get
 
 $$
-\epsilon_{ijk}\epsilon^{lmk}=\delta_{i}^{l}\delta_{j}^{m}-\delta_{i}^{m}\delta_{j}^{l}\label{2}\tag{2}
+\begin{aligned}
+  \epsilon_{ijk}\epsilon^{lmk}=3\delta_{i}^{l}\delta_{j}^{m}
+  &+\delta_{i}^{m}\delta_{j}^{l}
+  +\delta_{i}^{m}\delta_{j}^{l}\\
+  &-\delta_{i}^{l}\delta_{j}^{m}
+  -3\delta_{i}^{m}\delta_{j}^{l}
+  -\delta_{i}^{l}\delta_{j}^{m}\\
+\end{aligned}
 $$
 
-we set $$n=k$$ in equation $$\eqref{1}$$;
+Which proves the identity
 
 $$
-\begin{split}
-\epsilon_{ijk}\epsilon^{lmk} &=3\delta_{i}^{l}\delta_{j}^{m}+\delta_{i}^{m}\delta_{j}^{l}+\delta_{i}^{m}\delta_{j}^{l}\\
-&\quad\quad-\delta_{i}^{l}\delta_{j}^{m}-3\delta_{i}^{m}\delta_{j}^{l}-\delta_{i}^{l}\delta_{j}^{m}\\
-&=\delta_{i}^{l}\delta_{j}^{m}-\delta_{i}^{m}\delta_{j}^{l}
-\end{split}
+\epsilon_{ijk}\epsilon^{lmk}=\delta_{i}^{l}\delta_{j}^{m}
+-\delta_{i}^{m}\delta_{j}^{l}
+\tag{2}\label{2}
 $$
 
----
-To prove
+Setting $$m=j$$ in equation $$\eqref{2}$$ yields
+
+$$
+\epsilon_{ijk}\epsilon^{ljk}=3\delta_{i}^{l}-\delta_{i}^{l}\\
+$$
+
+Proving the identity
 
 $$
 \epsilon_{ijk}\epsilon^{ljk}=2\delta_{i}^{l}\tag{3}\label{3}
 $$
 
-we use $$m=j$$ in equation $$\eqref{2}$$;
+Letting the last set of indices be the same in equation $$\eqref{3}$$, the final Levi-Civita identity is obtained
 
 $$
-\begin{split}\epsilon_{ijk}\epsilon^{ljk} &=3\delta_{i}^{l}-\delta_{i}^{l}\\
-&=2\delta_{i}^{l}
-\end{split}
+\epsilon_{ijk}\epsilon^{ijk}=6\tag{4}\label{4}
 $$
 
----
-Lastly, to prove
 
-$$
-\epsilon_{ijk}\epsilon^{ijk}=6\label{4}\tag{4}
-$$
-
-we let the final set of indices be the same in equation $$\eqref{3}$$.
