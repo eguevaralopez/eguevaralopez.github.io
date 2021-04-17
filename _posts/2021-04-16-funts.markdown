@@ -1,0 +1,44 @@
+---
+layout:      post
+title:       "fun(ts)!"
+date:       2021-04-16 23:13:41 -0600
+categories:  post
+tags: [typography]
+---
+<style>
+p.font { 
+  font-size: 140px;
+  text-align: center;
+ }
+ 
+body.cmrom {
+  font-family: 'CM Roman';
+}
+body.sspro {
+  font-family: 'SourceSerif Pro';
+}
+body.plexs {
+  font-family: 'Plex Serif';
+}
+body.chart {
+  font-family: 'Charter';
+}
+</style>
+Check out these typefaces, in particular which have proper ligatures for these different characters…
+<p class="font">
+f i j l <br>
+
+ffi fj fl<br>
+
+<em>f i j l</em><br>
+
+<em>ffi fj fl</em>
+</p>
+<input type="radio" name="fontSelect" value="cmrom" id="cmrom" oninput="document.body.classList.toggle('sspro', false); document.body.classList.toggle('plexs', false); document.body.classList.toggle('chart', false);" checked>
+  <label for="lmroman">Computer Modern Roman</label>
+<input type="radio" name="fontSelect" value="sspro" id="sspro" oninput="document.body.classList.toggle('plexs', false); document.body.classList.toggle('chart', false); document.body.classList.toggle('sspro', true);" >
+  <label for="sspro">Source Serif Pro</label>
+<input type="radio" name="fontSelect" value="plexs" id="plexs" oninput="document.body.classList.toggle('sspro', false); document.body.classList.toggle('chart', false); document.body.classList.toggle('plexs', true);" >
+  <label for="plexs">Plex Serif</label>
+<input type="radio" name="fontSelect" value="chart" id="chart" oninput="document.body.classList.toggle('sspro', false); document.body.classList.toggle('plexs', false); document.body.classList.toggle('chart', true);" >
+  <label for="chart">Charter</label>
