@@ -22,7 +22,7 @@ As it turns out, the lectures were laid down in book form; at around 230 pages, 
 
 [There is a site](http://www.madscitech.org/tm/) devoted to the book. In it you can find a somewhat lengthy list of errata and also---amusingly---somewhere in there you can read the following statement;
 
->"Note: This book was written and typeset in Mathematica versions 7, 8, and 9."
+>Note: This book was written and typeset in Mathematica versions 7, 8, and 9.
 
 I assure you it shows. Contrary to the stunning cover, the insides are pretty ugly. Why anyone would abstain from using $$\mathrm{\LaTeX}$$ to publish a math or physics related book is beyond me at this point.
 
@@ -34,12 +34,12 @@ So, would I recommend this book? Yes and no. I would recommend it to undergrad s
 
 Based on the [2007 version of these lectures](http://theoreticalminimum.com/courses/classical-mechanics/2007/fall) and my own lecture notes from when I watched, here's the correlation between [L]andau & Lifshitz's **Mechanics** and [S]usskind's video lectures, so you can watch on the side as you read the book…
 
-…[S] Lectures 1 & 2 $$\rightarrow$$ introduction, watch first;
+- [S] Lectures 1 & 2 $$\rightarrow$$ introduction, watch first;
 
-…[L] Chapters 1 & 2 $$\leftrightarrow$$ [S] Lectures 3 to 5;
+- [L] Chapters 1 & 2 $$\leftrightarrow$$ [S] Lectures 3 to 5;
 
-…[L] Chapters 3 to 6 $$\rightarrow$$ "examples" of the theory, i.e., develop your understanding of mechanics from these fundamental applications;
+- [L] Chapters 3 to 6 $$\rightarrow$$ "examples" of the theory, i.e., develop your understanding of mechanics from these fundamental applications;
 
-…[L] Chapter 7 $$\leftrightarrow$$ [S] Lectures 6, 7, 9. These are helpful in making the material more accessible than *L&L*'s presentation;
+- [L] Chapter 7 $$\leftrightarrow$$ [S] Lectures 6, 7, 9. These are helpful in making the material more accessible than *L&L*'s presentation;
 
-…[S] Lecture 8 $$\rightarrow$$ a nice extra on electromagnetism.
+- [S] Lecture 8 $$\rightarrow$$ a nice extra on electromagnetism.

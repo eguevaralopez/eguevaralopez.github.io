@@ -59,43 +59,39 @@ a {
   }
 }
 
-/*****************
- * Running stats *
- *****************/
-span.run_display {
-  font-size: 40px;
-  font-weight: bold;
+/*********
+ * Lists *
+ *********/
+
+ul, ol {
+  margin-left: 0em;
 }
 
-span.run_number {
-  font-size: 32px;
-  font-weight: bold;
+/***************
+ * Blockquotes *
+ ***************/
+/*
+ blockquote:before {
+  margin-left: -1em;
+  content: open-quote;
 }
 
-span.run_unit {
-  font-size: 24px;
-  font-weight: bold;
+ blockquote:after {
+  margin-right: -1em;
+  content: close-quote;
 }
 
-table.run_display {
-//  border-collapse: collapse;
-  width: auto;
-  border: none;
+blockquote p {
+  display: inline;
+}
+*/
+blockquote {
+//  color: $text-color;
+  margin-left: -1em;
+  margin-right: -1em;
+  padding-left: 1em;
+  padding-right: 1em;
+  border-left: -4px solid $border-color-01;
+  border-right: -4px solid $border-color-01;
 }
 
-td.run_display, th.run_display {
-  border: none;
-  text-align: center;
-}
-
-table.run {
-//  border-collapse: collapse;
-  width: auto;
-  border: none;
-}
-
-td.run, th.run {
-  border: none;
-  text-align: center;
-  vertical-align: top;
-}

@@ -3,6 +3,49 @@ layout: page
 title: running
 permalink: /running/
 ---
+<style>
+/*****************
+ * Running stats *
+ *****************/
+span.run_display {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+span.run_number {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+span.run_unit {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+table.run_display {
+//  border-collapse: collapse;
+  width: auto;
+  border: none;
+}
+
+td.run_display, th.run_display {
+  border: none;
+  text-align: center;
+}
+
+table.run {
+//  border-collapse: collapse;
+  width: auto;
+  border: none;
+}
+
+td.run, th.run {
+  border: none;
+  text-align: center;
+  vertical-align: top;
+}
+</style>
+
 {::comment}
 <script src="//d3plus.org/js/d3.js"></script>
 <script src="//d3plus.org/js/d3plus.js"></script>

@@ -6,7 +6,10 @@ categories:  post
 tags: [typography]
 ---
 <style>
-p.font { 
+p.centrar {
+  text-align: center;
+}
+p.fuente { 
   font-size: 140px;
   text-align: center;
  }
@@ -21,20 +24,23 @@ body.plexs {
   font-family: 'Plex Serif';
 }
 </style>
-Ligatures are a beautiful thing…
-
+<p class="centrar">
 <input type="radio" name="fontSelect" value="cmrom" id="cmrom" oninput="document.body.classList.toggle('sspro', false); document.body.classList.toggle('plexs', false); document.body.classList.toggle('chart', false);" checked>
   <label for="lmroman"><a href="https://www.checkmyworking.com/cm-web-fonts/">Computer Modern Roman</a></label>
 <input type="radio" name="fontSelect" value="sspro" id="sspro" oninput="document.body.classList.toggle('plexs', false); document.body.classList.toggle('chart', false); document.body.classList.toggle('sspro', true);" >
   <label for="sspro"><a href="https://github.com/adobe-fonts/source-serif">Source Serif Pro</a></label>
 <input type="radio" name="fontSelect" value="plexs" id="plexs" oninput="document.body.classList.toggle('sspro', false); document.body.classList.toggle('chart', false); document.body.classList.toggle('plexs', true);" >
   <label for="plexs"><a href="https://github.com/IBM/plex">Plex Serif</a></label>
-<p class="font">
-f i j l <br>
-
-ffi ffj ffl<br>
-
-<em>f i j l</em><br>
-
-<em>ffi ffj ffl</em>
 </p>
+
+<p class="fuente">
+ff fi fj fl ft<br>
+
+ffi ffj ffl fft<br>
+
+<em>ff fi fj fl ft</em><br>
+
+<em>ffi ffj ffl fft</em><br>
+</p>
+
+Sé que mi objetivo era imitar un libro escrito en $$\mathrm{\LaTeX}$$, pero qué hermosa es *Source Serif Pro*…
