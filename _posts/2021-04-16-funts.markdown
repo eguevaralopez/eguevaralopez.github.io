@@ -25,11 +25,11 @@ body.plexs {
 }
 </style>
 <p class="centrar">
-<input type="radio" name="fontSelect" value="cmrom" id="cmrom" oninput="document.body.classList.toggle('sspro', false); document.body.classList.toggle('plexs', false); document.body.classList.toggle('chart', false);" checked>
+<input type="radio" name="fontSelect" value="cmrom" id="cmrom" oninput="document.body.classList.toggle('sspro', false); document.body.classList.toggle('plexs', false); document.body.classList.toggle('cmrom', true);" checked>
   <label for="lmroman"><a href="https://www.checkmyworking.com/cm-web-fonts/">Computer Modern Roman</a></label>
-<input type="radio" name="fontSelect" value="sspro" id="sspro" oninput="document.body.classList.toggle('plexs', false); document.body.classList.toggle('chart', false); document.body.classList.toggle('sspro', true);" >
+<input type="radio" name="fontSelect" value="sspro" id="sspro" oninput="document.body.classList.toggle('plexs', false); document.body.classList.toggle('sspro', true);" >
   <label for="sspro"><a href="https://github.com/adobe-fonts/source-serif">Source Serif Pro</a></label>
-<input type="radio" name="fontSelect" value="plexs" id="plexs" oninput="document.body.classList.toggle('sspro', false); document.body.classList.toggle('chart', false); document.body.classList.toggle('plexs', true);" >
+<input type="radio" name="fontSelect" value="plexs" id="plexs" oninput="document.body.classList.toggle('sspro', false); document.body.classList.toggle('plexs', true);" >
   <label for="plexs"><a href="https://github.com/IBM/plex">Plex Serif</a></label>
 </p>
 
