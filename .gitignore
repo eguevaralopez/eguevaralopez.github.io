@@ -1,6 +1,7 @@
 _site
 _drafts
 _data/graphData.py
+_data/runHeatmaps.ipynb
 _data/updateData
 .sass-cache
 .jekyll-cache
