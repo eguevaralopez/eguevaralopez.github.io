@@ -1,7 +1,7 @@
 total workouts,tiempo (dd:hh:mm:ss),distancia (km),ascenso (km),paso (min/km),calorías (kcal),radio Tierra (%),circunferencia Tierra (%),Muralla China (%),Chirripó (%),Everest (%),grasa corporal (kg),cerveza (latas),Trits,donas,Big Mac,Double Whopper w/Cheese
-407,10d06:58:41,2418.61,11.86,6:08,221204,37.96%,6.04%,11.41%,310.49%,134.05%,28.73,1436,696,489,410,226
-13,04:56:07,45.82,0.31,6:28,4272,,,,,,,,,,,
+409,10d07:56:57,2427.75,11.93,6:08,222056,38.11%,6.06%,11.45%,312.36%,134.86%,28.84,1442,698,491,411,227
+15,05:54:23,54.96,0.38,6:27,5124,,,,,,,,,,,
 ,total time (s),total distance(m),total climb (m),total energy (kcal),total longest,total fastest,total tallest,,,,,,,,,
-,889121,2418606.3,11860.8,221204,13.33,4:50,118,,,,,,,,,
+,892617,2427748.7,11932.1,222056,13.33,4:50,118,,,,,,,,,
 ,2021 time (s),2021 distance(m),2021 climb (m),2021 energy (kcal),current longest,current fastest,current tallest,,,,,,,,,
-,17767,45816.3,305.8,4272,5.40,6:06,51.5,,,,,,,,,https://fitness.stackexchange.com/questions/15608/energy-expenditure-calories-burned-equation-for-running/36045#36045
+,21263,54958.7,377.1,5124,6.07,6:06,59.4,,,,,,,,,https://fitness.stackexchange.com/questions/15608/energy-expenditure-calories-burned-equation-for-running/36045#36045
