@@ -1,0 +1,52 @@
+---
+layout:      post
+title:       "instalando un modchip de PS2 en 2021, p.1"
+date:       2021-07-14 15:58:48 -0600
+categories:  post
+tags: [hardware, mod, retro]
+---
+
+Llevo cerca de 1 año restaurando lentamente un Playstation 2. A lo interno no venía tan mal, después de una buena limpieza y de reemplazar varias almohadillas térmicas, así como completar los tornillos que faltaban, la máquina funcionaba bien.
+
+La consola siempre me gustó estéticamente, pero no creí utilizarla debido a mi aversión hacia las unidades ópticas. Unas semanas después de echarlo a andar, caminando por SJO, encontré el **adaptador de red** del PS2, que también trae soporte para un disco duro IDE. Pregunté el precio desinteresadamente—las cosas retro acá suelen ser muy caras—pero cuando escuché *6000 colones* (unos \$10) no lo pensé 2 veces y lo compré.
+
+{:refdef: style="text-align: center;"}
+![](/assets/img/2021-07-14-modchip2021_1.jpg){:width="70%"}
+{: refdef}
+
+Ya con el adaptador en casa y la ilusión de correr cualquier juego directo desde el disco duro, me volví un poco loco. Una visita a *ebay* de menos de 10 minutos dejó otra pérdida monetaria cuando compré un pequeño adaptador para cambiar la interfaz IDE a una interfaz SATA. Monté **Free HDBoot** y así como si nada tenía una biblioteca de alrededor de 4000 juegos a mi alcance. El único matiz: no se pueden correr juegos de Playstation desde el disco duro, al menos no sin emulación.
+
+Resulta que si bien el PS2 contiene la *mayoría* de un Playstation en sus adentros[^1], el que sería el CPU del Playstation se encarga de administrar el I/O en el Playstation 2. Al usar el disco duro, o los puertos USB, o el puerto de red, el CPU se utiliza para manejar esos dispositivos. Una solución popular es utilizar **popstarter**, pero para mí esto no es una solución: se trata de un **emulador**[^2]. Si el propósito fuera emular PS1, hay mejores plataformas que un PS2 para hacerlo…
+
+Por suerte el PS2 traía instalado un modchip antiguo, con un **bootsequence**: básicamente el botón de *Reset* se utilizaba como un dipswitch para controlar el comportamiento del chip al arrancar la consola. Esto era muy común en las primeras generaciones de chips. Para usar juegos de PS2 en CD/DVD, enciendo la consola con *Reset* y procedo como lo haría normalmente; para usar discos de PS1, enciendo la consola con *Eject* e introduzco el CD, apago la consola dejando *Reset* presionado, vuelvo a encender la consola, esta vez con *Reset*, dejándolo presionado hasta que el LED azul del botón de *Eject* se haya encendido… sí, es complejo, pero me permite jugar *backups* de juegos de PS1 de una forma casí que idéntica a la consola original.
+
+---
+
+*[Unos meses después…]*
+
+He jugado varios juegos quemados de PS, pero para hacerlo necesito llevar a cabo algo semejante a un *ritual* al encender el PS2. A veces lo logro al primer intento, a veces me toma varios, a veces desisto de jugar… es hora de cambiar ese viejo modchip por algo más moderno.
+
+El PS2 es la consola más popular de toda la historia y una de las más pirateadas de toda la historia. Existen *muchos* chips, pero el auge del PS2 fue hace unos 17 años, por lo que obviamente los chips que hay disponibles son los de la época o *clones* de los de la época. En Costa Rica ha sido dificil encontrar alguien que solo venda el chip—por algún motivo todo el mundo quiere instalarlo—pero ubiqué 2 opciones de clones que son más que suficientes para mis propósitos: un ModBo 4.0, clon del Matrix Infinity, por 13000 colones; o un Mars Pro, clon del DMS4 Lite, por 6500 colones.
+
+Aún no entiendo quién compraría un modchip por \$20 en pleno 2021, así que inmediatamente deseché el ModBo. Aclaro que \$10 *también* me parece caro, pero el costo es equivalente a comprarlo por \$3 en ebay y traerlo a Costa Rica. La diferencia de precio entre los chips no la puedo atribuir sino a pura mala intención del vendedor, ya que el Mars Pro permite hacer cosas que el ModBo 4.0 no, e.g., bootear desde el disco duro. Con el PS2 desarmado empieza la diversión…
+
+{:refdef: style="text-align: center;"}
+![](/assets/img/2021-07-14-modchip2021_2.jpg){:width="70%"}
+{: refdef}
+
+La instalación fue un reto. Llevaba *años* sin hacer trabajo tan pequeño, así que indudablemente la *limpieza* del cableado no es óptima, pero estoy satisfecho con la soldadura y el chip funciona bien. Pude haber colocado el chip al lado del BIOS (cables verdes en la foto) y acortar la distancia del cableado, pero decidí colocarlo justo donde estaba el chip viejo.
+
+{:refdef: style="text-align: center;"}
+![](/assets/img/2021-07-14-modchip2021_3.jpg){:width="70%"}
+{: refdef}
+
+A propósito del chip viejo: se trata de un *Apple2*, cuya fecha de salida al mercado no pude encontrar. Sin embargo, [la primera captura de sus especificaciones](https://web.archive.org/web/20030412140151/http://apple-chip.com/index/apple2.html) hecha por el *Internet Archive* data del 2003, así que se trata de un chip *muy* antiguo.
+
+{:refdef: style="text-align: center;"}
+![](/assets/img/2021-07-14-modchip2021_4.jpg){:width="70%"}
+{: refdef}
+
+En otro post detallaré algunos aspectos del funcionamiento del chip
+
+[^1]: Falta el GPU, que es emulado en el *Emotion Engine*. [Acá hay detalles sobre la retrocompatibilidad](https://freelansations.medium.com/the-story-of-the-ps2s-backwards-compatibility-from-the-engineer-who-built-it-ec39cf5a0353) del PS2, según el encargado del proyecto.
+[^2]: Y no solo emula el GPU, como la implementación por hardware de Sony, sino que emula todo el sistema.
