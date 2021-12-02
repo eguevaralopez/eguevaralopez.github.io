@@ -11,3 +11,4 @@ Gemfile
 Gemfile.lock
 minima.gemspec
 script
+updatePage
