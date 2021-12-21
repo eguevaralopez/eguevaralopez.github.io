@@ -2,6 +2,7 @@
 layout:      post
 title:       "instalando un modchip de PS2 en 2021, p.2"
 date:       2021-07-20 08:05:32 -0600
+modified_date: 2021-12-20 17:55:37 -0600
 categories:  post
 tags: [hardware, mod, retro]
 ---
