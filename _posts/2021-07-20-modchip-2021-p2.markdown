@@ -1,0 +1,206 @@
+---
+layout:      post
+title:       "instalando un modchip de PS2 en 2021, p.2"
+date:       2021-07-20 08:05:32 -0600
+categories:  post
+tags: [hardware, mod, retro]
+---
+En un [post anterior](_posts/modchip-2021.html) instalé un **Mars Pro GM-816HD** (clon del **DMS4 Lite**) en mi Playstation2 modelo SCPH-39001.
+
+{:refdef: style="text-align: center;"}
+![](/assets/img/2021-07-14-modchip2021_2.jpg){:width="70%"}
+{: refdef}
+
+Al instalarlo noté que desafortunadamente no es compatible con **Free HDBoot** (FHDB): intentar arrancar FHDB hace que el PS2 se cuelgue en una pantalla negra. Sacar el disco duro hace que el PS2 pueda arrancar, pero obviamente pierdo acceso al HDD. Si al encender el PS2 sostengo `L1` en el control, la máquina arranca con el modchip apagado y despliega las opciones de FHDB, pero esto lo logro sin ningún modchip y no se alínea con mi propósito: el chip lo necesito para arrancar juegos de Playstation desde la unidad óptica.
+
+Lo ideal es que el chip y el HDD convivan de alguna forma que me facilite la vida.
+
+<!---Afortunadamente, el Mars Pro soporta arranque desde el disco duro, por lo que sería óptimo deshacerse completamente de FHDB y arrancar **Open PS2 Loader** (OPL) directamente con el modchip. Con esta idea en mente me puse a investigar cómo lograrlo.--->
+### contenido
+{:.no_toc}
+1. ToC
+{:toc}
+
+---
+### investigación previa
+
+Además de desactivarse si se sostiene `L1` al encender la consola, sostener `SQUARE` despliega el menú de configuraciones del modchip; esto revela que está corriendo el firmware **ToxicBIOS v1.2**.
+
+{:refdef: style="text-align: center;"}
+![](/assets/img/2021-07-20-modchip2021p2_1.jpg){:width="70%"}
+{: refdef}
+
+Acá hay varias opciones que *en teoría* debería poder cambiar, pero por tratarse de un clon tanto el guardado de una nueva configuración como la actualización del firmware resultan imposibles. Así que estoy limitado a la versión 1.2 del firmware y a las configuraciones por defecto. De igual forma descargué los [archivos de actualización de ToxicBIOS v1.4](https://www.ps2-home.com/forum/viewtopic.php?t=3260), al menos para leer el *readme*.
+
+Esto resultó ser bastante provechoso por dos motivos, primero que todo se listaban todas las opciones de arranque del modchip;
+```
+Boot-time controller mapping
+============================
+
+When the console is booting, holding down certain buttons on controller 1
+will activate certain modes/features. These are listed below:
+
+   CROSS    - Use standard boot (over-ride default boot mode setting)
+   TRIANGLE - MC Dev.olution mode
+   START    - HDD Dev.olution mode
+   SELECT   - Fast boot mode
+   SQUARE   - Load configuration menu
+   L1       - Disable modchip
+```
+Las últimas dos las conocía, pero las otras eran nuevas para mí. Arrancar con `CROSS` es inútil porque no puedo guardar cambios de configuración—*siempre* se arranca con la configuración standard. Arrancar con `SELECT` activa el *fast boot* que se salta la secuencia de boot-up de la consola y el logo de PlayStation/PlayStation2 al iniciar los juegos. Interesante pero no muy útil de momento: primero hay que poder *arrancar* juegos desde la unidad óptica cuando el HDD está conectado. Eso deja dos opciones de arranque: `TRIANGLE` y `START`, que activan *MC Dev.olution mode* y *HDD Dev.olution mode* respectivamente.
+
+¿Qué carajos es *Dev.olution mode*? Es la segunda razón por la que fue provechoso leer el *readme*; 
+```
+Detailed Feature Overview
+=========================
+
+-> Dev.olution mode
+
+ Using Dev.olution mode you can boot applications from either the memory
+ card or hard disk drive. When booting in MC Dev.olution mode, the ELF file
+ "mc0:/BOOT/BOOT.ELF" is launched. This ELF file can be anything you want, 
+ such as DMS Explorer, PS2Menu, PS2OS etc. To boot in MC Dev.olution mode
+ either hold down TRIANGLE on controller 1 while the PS2 is booting, or
+ set default boot mode to MC Dev.olution in the configuration menu. Currently
+ the only application which can be launched with HDD Dev.olution mode is
+ DMS HDD Explorer. Once HDD Explorer is installed, you may boot in HDD
+ Dev.olution mode by either holding down START on controller 1 while the PS2
+ is booting, or set default boot mode to HDD Dev.olution in the configuration
+ menu.
+
+ NOTE: From ToxicBIOS v1.2 and up you must use DMS HDD Explorer v1.3 or
+       greater. Older versions are no longer supported.
+   
+...
+```
+*BINGO:* se puede arrancar *cualquier* archivo desde un memory card, desde la locación `mc0:/BOOT/BOOT.ELF` y se puede arrancar **DMS HDD Explorer** desde el HDD.
+
+Luego de bajar el archivo que contiene el [disco instalador de DMS HDD Explorer v1.31](https://www.ps2-home.com/forum/viewtopic.php?t=3260) y leer su respectivo *readme*—¡siempre hay que leer el readme!—, encontré aún más información interesante;
+```
+- Advanced Users
+
+With release 1.3 of HDD Explorer the actual HDD Explorer ELF has been
+seperated from the loader. This means that you can replace the HDD
+Explorer ELF on the HDD with anything you like, and this will be loaded
+when you enter Dev.olution 2 mode. The filename of the ELF which is loaded
+on startup is "boot.elf", in the partition "__boot". Another way of saying
+this is that "hdd:__boot/boot.elf" is loaded on startup. All you need
+to do in order to replace HDD Explorer with the application of your choice
+is replace this file.
+
+...
+```
+O sea, el funcionamiento es *idéntico* al del arranque desde la tarjeta de memoria: desde la locación `hdd0:/__boot/boot.elf` se puede arrancar cualquier ejecutable, *siempre y cuando se haga una instalación previa de DMS HDD Explorer y luego se sustituya el `.elf`*. Esto es afortunado porque DMS HDD Explorer no es más que un lanzador de aplicaciones, algo como **wLaunchElf** (wLE) es infinitamente más útil para accesar y modificar archivos de las tarjetas de memoria, HDD y puertos USB.
+
+Mientras investigaba sobre DMS HDD Explorer también encontré [un site con mucha información de época](http://ps2.x-pec.com/), incluida la forma de [modificar las aplicaciones](http://ps2.x-pec.com/dms_dev2_tech.html) presentes en el disco instalador. Con toda la información de esta sección el objetivo se esclareció por completo: *crear un disco que, con un PS2 recién modificado con un Mars Pro, permita instalar wLE en el HDD*.
+
+<!---Una vez esté wLE instalado se puede hacer lo que sea, en particular quiero que wLE reemplace a DMS HDD Explorer como aplicación por defecto al arrancar desde el HDD y que OPL sea la opción por defecto al arrancar desde la memory card.--->
+
+---
+### modificar el instalador de DMS HDD Explorer
+La imagen original viene en formato `.bin/.cue`, al quemarla e introducirla en el PS2 sigue un proceso de 2 pasos: durante el primer boot del CD instala DMS HDD Explorer en el disco duro, al reiniciar la consola y arrancar desde el HDD con `START` permite instalar las aplicaciones extra que vienen en el CD.
+
+Estas aplicaciones eran útiles durante la época, pero en el 2021 no sirven para nada. Dichosamente modificar la imagen del disco instalador y agregar [wLE v4.43a](https://www.ps2-home.com/forum/viewtopic.php?f=16&t=1895) es relativamente sencillo: el primer paso es montar la imagen `.bin` y copiar los archivos en algún directorio de trabajo. Todos los archivos en el folder `APPS` se pueden borrar, en su lugar se descomprime wLE v4.43a y se renombra la carpeta resultante como `WLE`. El árbol de archivos queda como sigue;
+```
+dir_de_trabajo
+  |--> APPS
+  | |--> WLE
+  |   |--> BOOT.ELF
+  |--> EXPINST.ELF
+  |--> HDD_EXP
+  |--> INSTALL.CNF
+  |--> SYSTEM.CNF
+```
+Luego, siguiendo las indicaciones de [este sitio](http://ps2.x-pec.com/dms_dev2_tech.html) se sustituye el contenido del archivo `INSTALL.CNF` por el siguiente;
+```
+[APP]
+  [HEADER]
+    [TITLE]
+      wLaunchELF
+    [/TITLE]
+    [AUTHOR]
+      sp193 and AKuHAK
+    [/AUTHOR]
+    [DESC]
+      4.43a
+    [/DESC]
+    [EXEC]
+      /WLE/boot.elf
+    [/EXEC]
+  [/HEADER]
+  [INSTALL]
+    [ACTION]
+      _MKDIR /WLE
+    [/ACTION]
+    [ACTION]
+      COPY /APPS/WLE/BOOT.ELF /WLE/boot.elf
+    [/ACTION]
+  [/INSTALL]
+  [UNINSTALL]
+    [ACTION]
+      REMOVE /WLE/boot.elf
+    [/ACTION]
+    [ACTION]
+      _RMDIR /WLE
+    [/ACTION]
+  [/UNINSTALL]
+[/APP]
+```
+Con estas dos cosas hechas, se crea una nueva imagen para quemar con el programa [**CDGenPS2**](https://www.ps2-home.com/forum/viewtopic.php?t=7531).
+  
+---
+### instalar el software
+
+Antes de siquiera pensar en instalar software al HDD, hay que utilizar [**WinHIIP**](https://www.ps2-home.com/forum/viewtopic.php?t=168) para formatearlo. Sin entrar en mucho detalle, el HDD se debe formatear como *48bit HDLoader*.
+
+Con el HDD formateado e instalado en el PS2, se inserta el disco quemado que se hizo en la sección anterior. Inmediatamente al arrancar pregunta si se quiere instalar HDD Explorer. Apretar `CROSS` confirma y despliega la siguiente imagen;
+
+{:refdef: style="text-align: center;"}
+![](/assets/img/2021-07-20-modchip2021p2_2.jpg){:width="70%"}
+{: refdef}
+
+Reiniciar el PS2 con `START` apretado lanza HDD Explorer, que despliega un menú vacío con varias opciones. Pulsar `CIRCLE` va a preguntar si se desean instalar las aplicaciones que vienen en el CD, que con la imagen modificada que se usa implica instalar wLaunchElf;
+
+{:refdef: style="text-align: center;"}
+![](/assets/img/2021-07-20-modchip2021p2_3.jpg){:width="70%"}
+{: refdef}
+
+ wLE se puede lanzar inmediatamente;
+
+{:refdef: style="text-align: center;"}
+![](/assets/img/2021-07-20-modchip2021p2_4.jpg){:width="70%"}
+{: refdef}
+
+Una vez que está corriendo, se navega a `hdd0:/__boot/`, hay varios archivos y un directorio llamado `WLE`. Se borran todos los archivos que están fuera del directorio (se marcan con `CROSS`, se apreta `R1` y se escoge *Delete*). Hecho esto, se mueve el archivo `hdd0:/__boot/WLE/boot.elf` a la raíz `hdd0:/__boot/` para que quede de esta forma;
+
+{:refdef: style="text-align: center;"}
+![](/assets/img/2021-07-20-modchip2021p2_5.jpg){:width="70%"}
+{: refdef}
+
+¡Listo! De ahora en adelante encender el PS2 sosteniendo `START` para arrancar desde el HDD va a ejecutar wLE. La parte dificil está hecha, lo que queda ahora es bajar la [versión más reciente del Open PS2 Loader](https://github.com/ps2homebrew/Open-PS2-Loader) (OPL) y descomprimirla en un USB drive. Luego, encender el PS2 sosteniendo `START` para lanzar wLE y copiar el `.elf` de OPL a la tarjeta de memoria, específicamente a `mc0:/BOOT/BOOT.ELF` (será necesario cambiarle el nombre a `BOOT.ELF`).
+
+Esto permite ejecutar OPL directo desde el memory card al encender el PS2 y dejar apretado `TRIANGLE`. Actualizar OPL se hace de la misma forma, se baja la versión más reciente y se sustituye el `BOOT.ELF` en el memory card.
+
+Si bien la configuración resultante es aceptable, no puedo evitar pensar que sería más fácil que existiera un *ODE* para el PS2…
+
+---
+### tl;dr
+
+- Formatear el HDD con WinHIIP usando *48bit HDLoader*;
+- Quemar [esta imagen modificada](/assets/files/hddExp_instalador.zip) a un CD y usarla para instalar DMS HDD Explorer y wLE en el disco duro;
+- Ejecutar wLE y reemplazar `hdd0:/__boot/WLE/boot.elf` de la instalación de HDD Explorer por el `boot.elf` de wLE;
+- Bajar OPL a un USB drive y copiar el `.elf` a el memory card en `mc0:/BOOT/BOOT.ELF`.
+- ¡Listo!
+
+Para jugar desde el HDD, encender el PS2 apretando `TRIANGLE`: esto lanza OPL desde el memory.  
+Para manejar archivos, encender el PS2 apretando `START`: esto lanza wLE desde el HDD.  
+Para jugar de la unidad óptica, encender el PS2 y meter un disco :)
+
+#### repositorio local de software usado
+{:.no_toc}
+
+- [ToxicBIOS v1.4](/assets/files/ToxicBIOS-1.4.zip)
+- [DMS HDD Explorer v1.31](/assets/files/hdd-explorer-installer-1.31.zip)
+- [wLE v4.43a](/assets/files/wLaunchELF_v4.43a (rev288)-2020-03-19_(commit-f35bddd).zip)
+- [CDGenPS2 v3.0](/assets/files/CDGenPS2 v3.0.7z)
+- [WinHIIP v1.7.6](/assets/files/WinHIIP_V1.7.6.7z)
