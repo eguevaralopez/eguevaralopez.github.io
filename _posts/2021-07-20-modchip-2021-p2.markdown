@@ -6,7 +6,7 @@ modified_date: 2021-12-20 17:55:37 -0600
 categories:  post
 tags: [hardware, mod, retro]
 ---
-En un [post anterior](_posts/modchip-2021.html) instalé un **Mars Pro GM-816HD** (clon del **DMS4 Lite**) en mi Playstation2 modelo SCPH-39001.
+En un [post anterior](/post/2021/07/14/modchip-2021.html) instalé un **Mars Pro GM-816HD** (clon del **DMS4 Lite**) en mi Playstation2 modelo SCPH-39001.
 
 {:refdef: style="text-align: center;"}
 ![](/assets/img/2021-07-14-modchip2021_2.jpg){:width="70%"}
