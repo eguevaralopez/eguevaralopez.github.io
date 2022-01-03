@@ -60,7 +60,7 @@ td.run, th.run {
 {:/comment}
 
 <figure>
-  <img src="/assets/img/running_2021.png" alt="" style="width:100%">
+  <img src="/assets/img/running_current.png" alt="" style="width:100%">
   <figcaption><b>Fig. 1.</b> Concentración de km durante el año.</figcaption>
 </figure>
 
@@ -133,7 +133,7 @@ Sección inspirada por las [estadísticas que presentaba](/assets/img/running_da
 	</tbody>
 </table></center>
 <figure>
-  <img src="/assets/img/running_2010-2020.png" alt="" style="width:100%">
+  <img src="/assets/img/running_aggregate.png" alt="" style="width:100%">
   <figcaption><b>Fig. 2.</b> Concentración de km través de los años.</figcaption>
 </figure>
 
