@@ -76,6 +76,12 @@ Detailed Feature Overview
 ```
 *BINGO:* se puede arrancar *cualquier* archivo desde un memory card, desde la locación `mc0:/BOOT/BOOT.ELF` y se puede arrancar **DMS HDD Explorer** desde el HDD.
 
+Mientras investigaba sobre DMS HDD Explorer también encontré [un site con mucha información de época](http://ps2.x-pec.com/), incluida la forma de [modificar las aplicaciones](http://ps2.x-pec.com/dms_dev2_tech.html) presentes en el disco instalador. Con toda la información de esta sección el objetivo se esclareció por completo: *crear un disco que, con un PS2 recién modificado con un Mars Pro, permita instalar **wLaunchElf** (wLE) en el HDD*.
+
+---
+#### *Opcional*
+{:.no_toc}
+
 Luego de bajar el archivo que contiene el [disco instalador de DMS HDD Explorer v1.31](https://www.ps2-home.com/forum/viewtopic.php?t=3260) y leer su respectivo *readme*—¡siempre hay que leer el readme!—, encontré aún más información interesante;
 ```
 - Advanced Users
@@ -91,9 +97,9 @@ is replace this file.
 
 ...
 ```
-O sea, el funcionamiento es *idéntico* al del arranque desde la tarjeta de memoria: desde la locación `hdd0:/__boot/boot.elf` se puede arrancar cualquier ejecutable, *siempre y cuando se haga una instalación previa de DMS HDD Explorer y luego se sustituya el `.elf`*. Esto es afortunado porque DMS HDD Explorer no es más que un lanzador de aplicaciones, algo como **wLaunchElf** (wLE) es infinitamente más útil para accesar y modificar archivos de las tarjetas de memoria, HDD y puertos USB.
+O sea, el funcionamiento es *idéntico* al del arranque desde la tarjeta de memoria: desde la locación `hdd0:/__boot/boot.elf` se puede arrancar cualquier ejecutable, *siempre y cuando se haga una instalación previa de DMS HDD Explorer y luego se sustituya el `.elf`*.
 
-Mientras investigaba sobre DMS HDD Explorer también encontré [un site con mucha información de época](http://ps2.x-pec.com/), incluida la forma de [modificar las aplicaciones](http://ps2.x-pec.com/dms_dev2_tech.html) presentes en el disco instalador. Con toda la información de esta sección el objetivo se esclareció por completo: *crear un disco que, con un PS2 recién modificado con un Mars Pro, permita instalar wLE en el HDD*.
+Esto permite reemplazar DMS HDD Explorer por wLE, para que este último arranque inmediatamente.
 
 <!---Una vez esté wLE instalado se puede hacer lo que sea, en particular quiero que wLE reemplace a DMS HDD Explorer como aplicación por defecto al arrancar desde el HDD y que OPL sea la opción por defecto al arrancar desde la memory card.--->
 
@@ -172,15 +178,17 @@ Reiniciar el PS2 con `START` apretado lanza HDD Explorer, que despliega un menú
 ![](/assets/img/2021-07-20-modchip2021p2_4.jpg){:width="70%"}
 {: refdef}
 
+<!---
 Una vez que está corriendo, se navega a `hdd0:/__boot/`, hay varios archivos y un directorio llamado `WLE`. Se borran todos los archivos que están fuera del directorio (se marcan con `CROSS`, se apreta `R1` y se escoge *Delete*). Hecho esto, se mueve el archivo `hdd0:/__boot/WLE/boot.elf` a la raíz `hdd0:/__boot/` para que quede de esta forma;
 
 {:refdef: style="text-align: center;"}
 ![](/assets/img/2021-07-20-modchip2021p2_5.jpg){:width="70%"}
 {: refdef}
+--->
 
-¡Listo! De ahora en adelante encender el PS2 sosteniendo `START` para arrancar desde el HDD va a ejecutar wLE. La parte dificil está hecha, lo que queda ahora es bajar la [versión más reciente del Open PS2 Loader](https://github.com/ps2homebrew/Open-PS2-Loader) (OPL) y descomprimirla en un USB drive. Luego, encender el PS2 sosteniendo `START` para lanzar wLE y copiar el `.elf` de OPL a la tarjeta de memoria, específicamente a `mc0:/BOOT/BOOT.ELF` (será necesario cambiarle el nombre a `BOOT.ELF`).
+¡Listo! De ahora en adelante al arrancar desde el HDD se tendrá la opción de ejecutar wLE. La parte dificil está hecha, lo que queda ahora es bajar la [versión más reciente del Open PS2 Loader](https://github.com/ps2homebrew/Open-PS2-Loader) (OPL) y descomprimirla en un USB drive. Luego, desde wLE copiar el `.elf` de OPL a la tarjeta de memoria, específicamente a `mc0:/BOOT/BOOT.ELF` (será necesario cambiarle el nombre a `BOOT.ELF`).
 
-Esto permite ejecutar OPL directo desde el memory card al encender el PS2 y dejar apretado `TRIANGLE`. Actualizar OPL se hace de la misma forma, se baja la versión más reciente y se sustituye el `BOOT.ELF` en el memory card.
+Así se puede ejecutar OPL directo desde el memory card al encender el PS2. Actualizar OPL se hace de la misma forma, se baja la versión más reciente y se sustituye el `BOOT.ELF` en el memory card.
 
 Si bien la configuración resultante es aceptable, no puedo evitar pensar que sería más fácil que existiera un *ODE* para el PS2…
 
@@ -189,8 +197,7 @@ Si bien la configuración resultante es aceptable, no puedo evitar pensar que se
 
 - Formatear el HDD con WinHIIP usando *48bit HDLoader*;
 - Quemar [esta imagen modificada](/assets/files/hddExp_instalador.zip) a un CD y usarla para instalar DMS HDD Explorer y wLE en el disco duro;
-- Ejecutar wLE y reemplazar `hdd0:/__boot/WLE/boot.elf` de la instalación de HDD Explorer por el `boot.elf` de wLE;
-- Bajar OPL a un USB drive y copiar el `.elf` a el memory card en `mc0:/BOOT/BOOT.ELF`.
+- Bajar OPL a un USB drive y copiar el `.elf` al memory card en `mc0:/BOOT/BOOT.ELF`.
 - ¡Listo!
 
 Para jugar desde el HDD, encender el PS2 apretando `TRIANGLE`: esto lanza OPL desde el memory.  
