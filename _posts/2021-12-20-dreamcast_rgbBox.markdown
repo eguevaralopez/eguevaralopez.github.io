@@ -43,7 +43,7 @@ El `74HCT244N` es un buffer de 3 estados y está conectado de forma que cuando l
 En el 2012 [mmmonkey implementó un circuito similar](https://mmmonkey.co.uk/dreamcast-internal-vga-mod/) en un PCB de pistas—en ese circuito se inspiró la siguiente construcción;
 
 {:refdef: style="text-align: center;"}
-![](/assets/img/2021-12-20-dreamcast_rgbBox_4.jpg){:width="100%"}
+![](/assets/img/2021-12-20-dreamcast_rgbBox_4.jpg){:width="70%"}
 {: refdef}
 
 - PCB de 13 filas, 19 columnas
@@ -53,7 +53,7 @@ En el 2012 [mmmonkey implementó un circuito similar](https://mmmonkey.co.uk/dre
 - No se instaló LED, pero se puede hacer en la parte superior.
 
 {:refdef: style="text-align: center;"}
-![](/assets/img/2021-12-20-dreamcast_rgbBox_5.jpg){:width="100%"}
+![](/assets/img/2021-12-20-dreamcast_rgbBox_5.jpg){:width="70%"}
 {: refdef}
 
 [^1]: Posiblemente—algún día—actualice el post con el circuito de audio.
