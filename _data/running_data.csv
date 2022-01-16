@@ -1,4 +1,7 @@
 fuente,date,distance (m),time (s),distance (km),~energy (kcal),time (h:mm:ss),pace (min/km) ,climb (m),cadence (spm),country
-https://www.strava.com/activities/6469202165,2022-01-03 19:19:49,4015.6,1580,4.02,374.41,26:20:00,6:33,39.5,155,Costa Rica
-https://www.strava.com/activities/6479176876,2022-01-05 18:25:58,3950.6,1570,3.95,368.35,26:10:00,6:37,40.8,154,Costa Rica
-https://www.strava.com/activities/6488710126,2022-01-07 19:03:45,4544.3,1783,4.54,423.71,29:43:00,6:32,41.7,156,Costa Rica
+https://www.strava.com/activities/6469202165,2022-01-03 19:19:49,4015.6,1580,4.02,374,26:20:00,6:33,39.5,155,Costa Rica
+https://www.strava.com/activities/6479176876,2022-01-05 18:25:58,3950.6,1570,3.95,368,26:10:00,6:37,40.8,154,Costa Rica
+https://www.strava.com/activities/6488710126,2022-01-07 19:03:45,4544.3,1783,4.54,424,29:43:00,6:32,41.7,156,Costa Rica
+https://www.strava.com/activities/6504346013,2022-01-10 18:54:45,3993.6,1520,3.99,372,25:20:00,6:21,39.9,156,Costa Rica
+https://www.strava.com/activities/6519980532,2022-01-13 18:58:52,4481.6,1706,4.48,418,28:26:00,6:21,41.7,156,Costa Rica
+https://www.strava.com/activities/6530223484,2022-01-15 19:51:41,4460,1750,4.46,416,29:10:00,6:32,42.2,156,Costa Rica

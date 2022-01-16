@@ -137,4 +137,4 @@ Sección inspirada por las [estadísticas que presentaba](/assets/img/running_da
   <figcaption><b>Fig. 2.</b> Concentración de km través de los años.</figcaption>
 </figure>
 
-[^1]: Los datos fueron recopilados del 2010 al 2013 y luego a partir de Febrero 2020. Del 2014 hasta el 2019 no corrí regularmente debido a una lesión en la espalda. Volví a correr en Octubre del 2019, pero no tengo los datos.
+[^1]: Del 2014 hasta el 2020 no corrí regularmente.
