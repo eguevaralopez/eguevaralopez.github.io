@@ -3,7 +3,7 @@ layout:      post
 title:       "cable RGB 15 kHz/31 kHz para el Dreamcast"
 date:       2021-12-20 21:06:09 -0600
 categories:  post
-tags: [hardware, mod, retro, toretto]
+tags: [diseño, hardware, retro, toretto]
 ---
 
 ```
