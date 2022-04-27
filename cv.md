@@ -7,6 +7,12 @@ permalink: /cv/
 [eguevaralopez@gmail.com](mailto:eguevaralopez@gmail.com)  
 (+506) 8874 7017
 
+## Motivation
+
+The last couple of years have been rough for everyone. We tried to make the best of our time at home by finding new hobbies or, as was my case, by rekindling our passion for old ones. I've had a life–long obsession with electronics, and decided to enroll back in school to pursue a degree in engineering. 
+
+After working many odd jobs through the years, my hope is to make a career in electronics. I am particularly interested in IC design and am currently doing my best to dive head-first into the subject. 
+
 ## Education
 - **Master of Science in Physics**  
 *Rijksuniversiteit Groningen* (University of Groningen)  
@@ -20,20 +26,27 @@ In particular, the solutions by *Duru and Kleinert* and by *Peak and Inomata* we
 *Universidad de Costa Rica* (University of Costa Rica)  
 San José, Costa Rica, 2012  
 
-A degree in logical problem-solving and analyzing data.
+A degree in logical problem-solving and analyzing data in the context of Physics. The methods, however, are universal.
 
-- **[*in progress*] Licentiate in Electronics Engineering**  
-*Tecnológico de Costa Rica* (Costa Rica's Institute of Technology)  
+
+- **Bachelor of Electrical Engineering**  
+*Universidad de Costa Rica* (University of Costa Rica)  
 Expected 2023  
 
-Electronics has been a recurrent hobby throughout my life, during the start of the COVID-19 pandemic I decided to re-enroll as a student and get a degree in engineering.  
+## Experience
+
+While studying Physics I was employed in various *Teaching Assistant* positions at *UCR*. This included grading papers and occasional lecturing for courses such as *General Physics 2*, *Thermodynamics*, *Physics of Music*, and *Classical Mechanics*.
+
+I've worked exclusively in the service industry for as long as I can remember. My last position as an employee in Costa Rica was as a *Customer Service Rep* for *NorthStar Media*[^nsm], tending to a series of online casinos. After that I volunteered at the [*Flutterby House*](https://www.flutterbyhouse.com/) hostel in Uvita, where I bartended, interacted with guests, and kept other responsabilities.
+
+While in the Netherlands, I worked at a chain restaurant called *Broodje Ben*, which allowed me to pay rent and buy food while I finished my master's degree. As an advanced physics student, I also tutored undergraduate students extensively.
 
 ## Technical Skills
-- I have [experience with various](https://www.codewars.com/users/eguevaralopez) programming languages like *C*, *C++*, *Python*, and *Bash*; and with source control via [*Git*](https://github.com/eguevaralopez).  
+- I have experience with various<!--[experience with various](https://www.codewars.com/users/eguevaralopez) --> programming languages like *C*, *C++*, *Python*, and *Bash*; and with source control via [*Git*](https://github.com/eguevaralopez).  
 <!-- I'm fairly experienced with scripting languages—*Bash* and *Python* in particular.  -->
 ---I use *Bash* for day-to-day tasks or small tasks that need automating. I don't have expert knowledge of *sed* or *awk*, but I know where the *man-pages* are if I need help.  
----*Python* I use mainly for simulations of physical systems: plotting probability distributions, looking into quantum tunneling, etc. I use libraries such as *numpy* and *scipy*, *matplotlib*, *jupyter*, and *pandas*.  
----The main use I have for *C* and *C++* is programming microcontrollers, which I have used in a myriad of projects.
+---*Python* I've used mainly for simulations of physical systems: plotting probability distributions, looking into quantum tunneling, etc. I use libraries such as *numpy* and *scipy*, *matplotlib*, *jupyter*, and *pandas*.  
+---The main use I have for *C* and *C++* is programming microcontrollers, which I have used in a myriad of hobby projects. Most recently I've been using MCUs to add functionality to old videogame consoles and to design custom controllers, for example.
 <!-- I have some experience with other languages, mostly *C* and *C++*; and with source-control via *Git*.-->
 - *HDL* experience via *Verilog* and *SystemVerilog*.  
 - I have extensive instrumentation experience, including oscilloscopes, multimeters, logic analyzers, spectrum analyzers, and signal generators.  
@@ -43,3 +56,19 @@ Electronics has been a recurrent hobby throughout my life, during the start of t
 - *Spanish* (native), *English* (bilingual), *French* (intermediate), and *Dutch* (beginner).
 
 ## Soft Skills
+
+Working in the service industry—and in other non-standard jobs—has allowed me to accrue invaluable skills, among which stand out
+- Clear and concise communication,
+- Teamwork, leadership, and motivational skills,
+- Conflict management, team building,
+- Ability to address crowds,
+- Adaptability and creativity.
+
+## Other interests and hobbies
+
+- Assembling and benchmarking old computers, for preservation purposes,
+- Quantum computing and its hardware implementations,
+- Running.
+
+
+[^nsm]: Now defunct, but references can be provided.
