@@ -3,7 +3,7 @@ layout:      post
 title:       "from the web, vol.3: digital love"
 date:       2022-06-01 20:26:05 -0600
 categories:  post
-tags: [design, eecs, fpga, hardware, msc]
+tags: [diseño, eecs, fpga, hardware, msc]
 ---
 
 <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/2VEZx7NWsZ1D0eJ4uv5Fym?utm_source=generator&theme=0" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>  
