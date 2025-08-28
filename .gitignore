@@ -1,15 +1,8 @@
 _site
 _drafts
-_data/graphData.py
-_data/runHeatmaps.ipynb
-_data/updateData
+_data
 .sass-cache
 .jekyll-cache
 .jekyll-metadata
-vendor
 Gemfile
 Gemfile.lock
-minima.gemspec
-script
-updatePage
-cv.md
