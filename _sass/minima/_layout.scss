@@ -9,6 +9,12 @@
 
   // Positioning context for the mobile navigation icon
   position: relative;
+
+  .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 }
 
 .site-title {
@@ -16,13 +22,47 @@
   font-weight: 300;
   letter-spacing: -1px;
   margin-bottom: 0;
-  float: left;
 
   @include media-query($on-palm) {
     padding-right: 45px;
   }
 
   &,
+  &:visited {
+    color: $site-title-color;
+  }
+}
+
+.site-email {
+  @include relative-font-size(0.9375);
+  color: $site-title-color;
+  margin-right: 15px;
+
+  &:visited {
+    color: $site-title-color;
+  }
+}
+
+.site-contact-feed {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.feed-link {
+  @include relative-font-size(0.9375);
+  color: $site-title-color;
+  margin-right: 15px;
+
+  &:visited {
+    color: $site-title-color;
+  }
+}
+
+.donation-link {
+  @include relative-font-size(0.9375);
+  color: $site-title-color;
+
   &:visited {
     color: $site-title-color;
   }
@@ -141,6 +181,17 @@
   margin-left: 0;
 }
 
+.footer-link {
+  @include relative-font-size(0.9375);
+  color: $brand-color;
+  display: inline-block;
+  margin-right: 10px;
+
+  &:visited {
+    color: $brand-color;
+  }
+}
+
 .footer-col-wrapper,
 .social-links {
   @include relative-font-size(0.9375);
@@ -149,6 +200,11 @@
 
 .footer-col {
   margin-bottom: $spacing-unit / 2;
+
+  p {
+    @include relative-font-size(0.9375);
+    color: $brand-color;
+  }
 }
 
 .footer-col-1,

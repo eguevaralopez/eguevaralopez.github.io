@@ -1,6 +1,6 @@
 ---
 layout:      post
-title:       "modificando la tipografía de upeb, p.2"
+title:       "modificando la tipografía del blog, p.2"
 date:       2021-04-16 09:00:32 -0600
 categories:  post
 ---

@@ -1,5 +1,7 @@
-title: una página en blanco
-email: eguevaralopez@gmail.com
+title: Esteban Guevara López
+author:
+  email: eguevaralopez@gmail.com
+paypal: estebanguevaralopez
 description: un blog no-lineal, de un mae no-lineal
 url: "http://eguevaralopez.github.io"
 show_excerpts: false # set to true to show excerpts on the homepage
@@ -13,7 +15,11 @@ minima:
 # this and add the path to the pages in order as they should show up
 header_pages:
 # - running.md
+# - acerca.md
+
+footer_pages:
  - acerca.md
+#  - cv.md
 
 # Build settings
 theme: minima
