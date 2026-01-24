@@ -3,6 +3,7 @@ layout:      post
 title:       "modificando la tipografía de upeb, p.1"
 date:       2021-04-08 09:15:00 -0600
 categories:  post
+katex: true
 ---
 Aunque estoy bastante satisfecho con el tema por defecto de Jekyll, decidí modificar la **tipografía** del sitio: quiero que se parezca lo más posible a un libro escrito en $\mathrm{\LaTeX}$, *sin importar el dispositivo donde se lea*.  Lo primero que hice fue agregar el siguiente código al final del archivo `_includes/custom-head.html`;
 ```
