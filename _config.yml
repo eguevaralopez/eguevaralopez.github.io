@@ -18,7 +18,7 @@ header_pages:
 # - acerca.md
 
 footer_pages:
- - acerca.md
+#  - pc.md
 #  - cv.md
 
 # Build settings

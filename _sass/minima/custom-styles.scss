@@ -1,19 +1,7 @@
-/*
-.post-content {
-	text-align: justify;
-	hyphens: auto;
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  margin-top: 1rem;
-}
-*/
-
 /*************
  * Footnotes *
  *************/
 .footnotes p {
-//  text-align: left;
-//  line-height: 1.3;
   font-size: $small-font-size;
   margin-top: 1rem;
 }
@@ -23,16 +11,7 @@
 }
 a.footnote {
   font-size: 14px;
-  //font-size: $small-font-size;
 }
-/*
-a.footnote:before {
-	content: "[";
-}
-a.footnote:after {
-	content: "]";
-}
-*/
 
 /*********
  * Links *
@@ -62,36 +41,19 @@ a {
 /*********
  * Lists *
  *********/
-
-ul, ol {
-  margin-left: 0em;
-}
+// ul, ol {
+//   margin-left: 0em;
+// }
 
 /***************
  * Blockquotes *
  ***************/
-/*
- blockquote:before {
-  margin-left: -1em;
-  content: open-quote;
-}
-
- blockquote:after {
-  margin-right: -1em;
-  content: close-quote;
-}
-
-blockquote p {
-  display: inline;
-}
-*/
-blockquote {
-//  color: $text-color;
-  margin-left: -1em;
-  margin-right: -1em;
-  padding-left: 1em;
-  padding-right: 1em;
-  border-left: -4px solid $border-color-01;
-  border-right: -4px solid $border-color-01;
-}
+// blockquote {
+//   margin-left: -1em;
+//   margin-right: -1em;
+//   padding-left: 1em;
+//   padding-right: 1em;
+//   border-left: -4px solid $border-color-01;
+//   border-right: -4px solid $border-color-01;
+// }
 
