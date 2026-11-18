@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "from the web, vol.1"
-date: 2016-02-27 14:43:00 +0100
+date:  2016-02-27
 categories: post
 ---
 Because a grad student's money is better spent on food and drink, here is a compendium of useful and free resources I've gone through (or plan to go through, in some cases) as I work towards my M.Sc. in Physics.

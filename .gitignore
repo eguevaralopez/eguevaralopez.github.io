@@ -5,3 +5,5 @@ _data
 .jekyll-metadata
 Gemfile
 Gemfile.lock
+
+*.swp

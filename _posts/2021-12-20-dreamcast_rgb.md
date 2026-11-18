@@ -1,8 +1,9 @@
 ---
 layout:      post
 title:       "cable RGB 15 kHz/31 kHz para el Dreamcast"
-date:       2021-12-20 21:06:09 -0600
+date:       2021-12-20
 categories:  post
+redirect_from: /post/2021-12-21/dreamcast_rgb.html
 ---
 
 El puerto AV del Dreamcast tiene la capacidad de tirar señales RGB, Vsync, Hsync y Csync. Los estados del pin 6 (S1) y el pin 7 (S2) controlan qué señales salen del GPU. Estos pines tienen lógica negativa y su tabla es la siguiente;

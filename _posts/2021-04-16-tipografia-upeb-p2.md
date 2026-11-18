@@ -1,7 +1,7 @@
 ---
 layout:      post
 title:       "modificando la tipografía del blog, p.2"
-date:       2021-04-16 09:00:32 -0600
+date:       2021-04-16
 categories:  post
 ---
 Continuación del [post pasado](/post/2021/04/08/tipografia-upeb-p1.html), donde mencioné que quería hacer algo respecto a los tags. Obviamente no soy el primero en pensar en esto y la solución ya estaba en línea, así que antes de reinventar la rueda decidí seguir los pasos mencionados [en este post](https://longqian.me/2017/02/09/github-jekyll-tag/). Implementar los cambios me tomó menos de 10m.

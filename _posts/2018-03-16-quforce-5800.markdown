@@ -1,7 +1,7 @@
 ---
 layout:      post
 title:       "the story of the QuForce FX 5800 Ultra…"
-date:       2018-03-16 16:12:00 +0200
+date:       2018-03-16
 categories:  post
 katex: true
 ---

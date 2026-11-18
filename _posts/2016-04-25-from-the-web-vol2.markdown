@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "from the web, vol.2—QFT edition"
-date:   2016-04-25 06:41:00 +0200
+date:   2016-04-25
 categories: post
 ---
 Second round of freebies from the web, with a slight bias for *quantum field theory* as I keep studying the subject;

@@ -1,7 +1,7 @@
 ---
 layout:      post
 title:       "modificando la tipografía del blog, p.1"
-date:       2021-04-08 09:15:00 -0600
+date:       2021-04-08
 categories:  post
 katex: true
 ---

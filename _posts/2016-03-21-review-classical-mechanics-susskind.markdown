@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "review: Classical Mechanics, The Theoretical Minimum by Leonard Susskind"
-date: 2016-03-21 04:18:00 +0100
+date:  2016-03-21
 categories: post
 katex: true
 ---

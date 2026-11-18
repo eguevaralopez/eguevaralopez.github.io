@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "about those pesky Levi-Civita identities"
-date:   2016-02-25 13:14:00 +0100
+date:   2016-02-25
 categories: post
 katex: true
 ---

@@ -1,8 +1,9 @@
 ---
 layout:      post
 title:       "my quirky 440BX PC, p.1"
-date:        2026-02-24 18:25:13 -0600
+date:        2026-02-24
 categories:  post
+redirect_from: /post/2026-02-25/my-quirky-440bx-pc-p1.html
 katex:      true
 ---
 I have incredibly fond memories of my childhood PCs.
