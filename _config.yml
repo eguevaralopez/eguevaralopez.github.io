@@ -1,9 +1,10 @@
 title: Esteban Guevara López
 author:
+  name: Esteban Guevara López
   email: eguevaralopez@gmail.com
 paypal: estebanguevaralopez
 description: un blog no-lineal, de un mae no-lineal
-url: "http://eguevaralopez.github.io"
+url: "https://eguevaralopez.github.io"
 show_excerpts: false # set to true to show excerpts on the homepage
 
 # Minima date format
